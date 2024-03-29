@@ -1,4 +1,4 @@
-import { THEME_TEXT_COLOR } from '../Styles/constants.styles';
+import { THEME_BLACK_COLOR } from '../Styles/constants.styles';
 import { StyledHeader } from '../Styles/Header.styles';
 
 const Header = () => {
@@ -30,7 +30,7 @@ const Header = () => {
 				<span>MCA</span>
 				<a target="_blank" href="/Resume.pdf">
 					<span
-						style={{ textDecoration: 'underline', color: THEME_TEXT_COLOR }}
+						style={{ textDecoration: 'underline', color: THEME_BLACK_COLOR }}
 					>
 						Resume
 					</span>

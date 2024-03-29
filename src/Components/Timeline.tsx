@@ -1,99 +1,199 @@
-import { useEffect, useState } from 'react';
-import { TimelineDiv } from '../Styles/Timeline.styles';
-
-const Timeline = () => {
-	const [removeStyles, setRemoveStyles] = useState(false);
-	useEffect(() => {
-		setRemoveStyles(true);
-		setTimeout(() => {
-			setRemoveStyles(false);
-		}, 0);
-	}, []);
-	if (removeStyles) {
-		return (
-			<style>{`
-		.timeline::after {content: none}
-		.timeline::before {content: none}
-		.left::before {content: none}
-		.left::after {content: none}
-		.right::after {content: none}
-		.right::before {content: none}
-		`}</style>
-		);
-	}
+import {
+	VerticalTimeline,
+	VerticalTimelineElement,
+} from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
+import { getColors } from '../Styles/constants.styles';
+const Timelinecomp = () => {
+	const { THEME_ALTER_COLOR, THEME_BLACK_COLOR, THEME_TEXT_COLOR } =
+		getColors();
 	return (
-		<TimelineDiv className="timeline">
-			<div className={`container left`}>
-				<div className="content">
-					<h1>1995</h1>
+		<div style={{ background: THEME_BLACK_COLOR }}>
+			<VerticalTimeline lineColor={THEME_ALTER_COLOR}>
+				<VerticalTimelineElement
+					className="vertical-timeline-element--work"
+					contentStyle={{
+						background: THEME_ALTER_COLOR,
+						color: THEME_TEXT_COLOR,
+					}}
+					contentArrowStyle={{ borderRight: `7px solid  ${THEME_ALTER_COLOR}` }}
+					date="Dec 8, 1995"
+					iconStyle={{ background: THEME_ALTER_COLOR, color: '#fff' }}
+				>
+					<h3 className="vertical-timeline-element-title">Birth</h3>
+					<h4 className="vertical-timeline-element-subtitle">
+						Ambala City, India{' '}
+					</h4>
 					<p>
 						A little Enthuastic took Birth on Dec 8<sup>th</sup> and parents
 						decided to call him "Gursimran Singh". BTW you can call him GURSI
 						for short.
 					</p>
-				</div>
-			</div>
-			<div className="container right">
-				<div className="content">
-					<h1>2011</h1>
-					<p>I passed my Secondary Examination with 95% marks from HBSE</p>
-				</div>
-			</div>
-			<div className="container left">
-				<div className="content">
-					<h1>2013</h1>
+				</VerticalTimelineElement>
+				<VerticalTimelineElement
+					className="vertical-timeline-element--work"
+					contentStyle={{
+						background: THEME_ALTER_COLOR,
+						color: THEME_TEXT_COLOR,
+					}}
+					contentArrowStyle={{ borderRight: `7px solid  ${THEME_ALTER_COLOR}` }}
+					date="May 2011"
+					iconStyle={{ background: THEME_ALTER_COLOR, color: '#fff' }}
+				>
+					<h3 className="vertical-timeline-element-title">
+						Seconday Education
+					</h3>
+					<h4 className="vertical-timeline-element-subtitle">HBSE, Bhiwani</h4>
+					<p>Completed Secondary Education</p>
+				</VerticalTimelineElement>
+				<VerticalTimelineElement
+					className="vertical-timeline-element--work"
+					contentStyle={{
+						background: THEME_ALTER_COLOR,
+						color: THEME_TEXT_COLOR,
+					}}
+					contentArrowStyle={{ borderRight: `7px solid  ${THEME_ALTER_COLOR}` }}
+					date="May 2013"
+					iconStyle={{ background: THEME_ALTER_COLOR, color: '#fff' }}
+				>
+					<h3 className="vertical-timeline-element-title">
+						Senior Seconday Education
+					</h3>
+					<h4 className="vertical-timeline-element-subtitle">HBSE, Bhiwani</h4>
 					<p>
-						I passed my Senio Secondary Examination (Physics, Chemistry &
-						Mathematics) with 82.6% marks from HBSE
+						Completed Senior Secondary Education (Physics, Chemistry &
+						Mathematics)
 					</p>
-				</div>
-			</div>
-			<div className="container right">
-				<div className="content">
-					<h1>2016</h1>
+				</VerticalTimelineElement>
+				<VerticalTimelineElement
+					className="vertical-timeline-element--work"
+					contentStyle={{
+						background: THEME_ALTER_COLOR,
+						color: THEME_TEXT_COLOR,
+					}}
+					contentArrowStyle={{ borderRight: `7px solid  ${THEME_ALTER_COLOR}` }}
+					date="2013 - 2016"
+					iconStyle={{ background: THEME_ALTER_COLOR, color: '#fff' }}
+				>
+					<h3 className="vertical-timeline-element-title">Graduation</h3>
+					<h4 className="vertical-timeline-element-subtitle">
+						Kurukshetra University, Kurukshetra
+					</h4>
 					<p>
-						I Completed my Degree in B.Sc Compute science from Kurukshetra
-						University with 75% marks.
+						Completed Graduation in B.Sc Computer science from Kurukshetra
+						University.
 					</p>
-				</div>
-			</div>
-			<div className="container left">
-				<div className="content">
-					<h1>Nov 2018</h1>
+				</VerticalTimelineElement>
+				<VerticalTimelineElement
+					className="vertical-timeline-element--work"
+					contentStyle={{
+						background: THEME_ALTER_COLOR,
+						color: THEME_TEXT_COLOR,
+					}}
+					contentArrowStyle={{ borderRight: `7px solid  ${THEME_ALTER_COLOR}` }}
+					date="Nov 2018 - May 2019"
+					iconStyle={{ background: THEME_ALTER_COLOR, color: '#fff' }}
+				>
+					<h3 className="vertical-timeline-element-title">Internship</h3>
+					<h4 className="vertical-timeline-element-subtitle">
+						Agile Media Lab, Chandigarh
+					</h4>
+					<p>Worked As Intern and worked with following technologies</p>
+					<p>HTML, CSS, PHP-Symfony, React JS, Jquery, Backbone JS</p>
+				</VerticalTimelineElement>
+				<VerticalTimelineElement
+					className="vertical-timeline-element--work"
+					contentStyle={{
+						background: THEME_ALTER_COLOR,
+						color: THEME_TEXT_COLOR,
+					}}
+					contentArrowStyle={{ borderRight: `7px solid  ${THEME_ALTER_COLOR}` }}
+					date="2016 - 2019"
+					iconStyle={{ background: THEME_ALTER_COLOR, color: '#fff' }}
+				>
+					<h3 className="vertical-timeline-element-title">Post Graduation</h3>
+					<h4 className="vertical-timeline-element-subtitle">
+						Panjab University, Chandigarh
+					</h4>
 					<p>
-						I started Internship and then Full Time as Junior software Engineer
-						in Agile media labs Private limited, Chandigarh.
+						Completed Post Graduation in Masters of Computer Application from
+						Panjab University University.
 					</p>
-				</div>
-			</div>
-			<div className="container right">
-				<div className="content">
-					<h1>May 2019</h1>
+				</VerticalTimelineElement>
+				<VerticalTimelineElement
+					className="vertical-timeline-element--work"
+					contentStyle={{
+						background: THEME_ALTER_COLOR,
+						color: THEME_TEXT_COLOR,
+					}}
+					contentArrowStyle={{ borderRight: `7px solid  ${THEME_ALTER_COLOR}` }}
+					date="May 2019 - Jan 2021"
+					iconStyle={{ background: THEME_ALTER_COLOR, color: '#fff' }}
+				>
+					<h3 className="vertical-timeline-element-title">
+						Junior Software Engineer
+					</h3>
+					<h4 className="vertical-timeline-element-subtitle">
+						Agile Media Lab, Chandigarh
+					</h4>
 					<p>
-						I Completed my Masters Degree in Masters of Compute Applications
-						from Panjab University Chandigarh with 70% marks.
+						Worked As Junior Software Engineer and worked with following
+						technologies
 					</p>
-				</div>
-			</div>
-			<div className="container left">
-				<div className="content">
-					<h1>Feb 2021</h1>
 					<p>
-						Agile Media lab Turend to Aristeia Services and I got promoted to
-						Senior Software Engineer.
+						HTML, CSS, PHP-Symfony, Doctrine, MySql, React JS, Jquery, Backbone
+						JS
 					</p>
-				</div>
-			</div>
-			<div className="container right">
-				<div className="content">
-					<h1>Sept 2021</h1>
+				</VerticalTimelineElement>
+				<VerticalTimelineElement
+					className="vertical-timeline-element--work"
+					contentStyle={{
+						background: THEME_ALTER_COLOR,
+						color: THEME_TEXT_COLOR,
+					}}
+					contentArrowStyle={{ borderRight: `7px solid  ${THEME_ALTER_COLOR}` }}
+					date="Feb 2021 - Sept 2021"
+					iconStyle={{ background: THEME_ALTER_COLOR, color: '#fff' }}
+				>
+					<h3 className="vertical-timeline-element-title">
+						Senior Software Engineer
+					</h3>
+					<h4 className="vertical-timeline-element-subtitle">
+						Aristeia Services, Singapore
+					</h4>
 					<p>
-						I joined Trantor Software Inc, Chandigarh as Senior Software
-						Engineer and I am working there till Today.
+						Worked As Senior Software Engineer and worked with following
+						technologies
 					</p>
-				</div>
-			</div>
-		</TimelineDiv>
+					<p>
+						HTML, CSS, PHP-Symfony, Doctrine, MySql, React JS, Jquery, Backbone
+						JS
+					</p>
+				</VerticalTimelineElement>
+				<VerticalTimelineElement
+					className="vertical-timeline-element--work"
+					contentStyle={{
+						background: THEME_ALTER_COLOR,
+						color: THEME_TEXT_COLOR,
+					}}
+					contentArrowStyle={{ borderRight: `7px solid  ${THEME_ALTER_COLOR}` }}
+					date="Sept 2021 - Current"
+					iconStyle={{ background: THEME_ALTER_COLOR, color: '#fff' }}
+				>
+					<h3 className="vertical-timeline-element-title">
+						Senior Software Engineer
+					</h3>
+					<h4 className="vertical-timeline-element-subtitle">
+						Trantor Software, Chandigarh
+					</h4>
+					<p>
+						Worked As Senior Software Engineer and worked with following
+						technologies
+					</p>
+					<p>HTML, CSS, Express JS, MySql, React JS, Backbone JS, Next JS</p>
+				</VerticalTimelineElement>
+			</VerticalTimeline>
+		</div>
 	);
 };
-export default Timeline;
+export default Timelinecomp;

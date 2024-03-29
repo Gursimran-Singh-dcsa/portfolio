@@ -52,7 +52,7 @@ export const AboutMe = () => {
 					}}
 				>
 					<a href="#work">
-						<Button $type="simple">See My Work</Button>
+						<Button style={{color: 'white'}} $type="simple">See My Work</Button>
 					</a>
 				</div>
 			</RightWrapper>

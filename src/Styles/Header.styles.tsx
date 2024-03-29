@@ -1,11 +1,12 @@
 import styled, { css } from 'styled-components';
-import { tablet } from './constants.styles';
+import { tablet, THEME_BLACK_COLOR } from './constants.styles';
 
 export const StyledHeader = styled.header`
 	width: 10vw;
 	height: 100vh;
 	flex-direction: column;
 	justify-content: space-between;
+	color: ${THEME_BLACK_COLOR};
 	img {
 		cursor: pointer;
 	}
@@ -38,6 +39,7 @@ export const StyledHeader = styled.header`
 		display: flex;
 		flex-direction: column;
 		row-gap: 1.5rem;
+		${(props) => (props.theme.invertIcons ? 'filter: invert(1)' : '')};
 		${tablet(css`
 			display: none;
 		`)}

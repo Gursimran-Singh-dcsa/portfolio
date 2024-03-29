@@ -40,6 +40,15 @@ export const FloatingContent = () => {
 			text: '#ffffff',
 			active: true,
 		},
+		{
+			id: 5,
+			dark: '#000000',
+			light: 'rgb(254, 212, 58)',
+			// text: '#ffffff',
+			text: '#000000',
+			active: false,
+			invertIcons: true,
+		},
 	]);
 
 	return (
@@ -85,6 +94,7 @@ export const FloatingContent = () => {
 										THEME_TEXT_COLOR: color.text,
 										id: color.id,
 										active: color.id === option.id ? true : false,
+										invertIcons: option.invertIcons ?? false,
 									};
 								}
 								return {
