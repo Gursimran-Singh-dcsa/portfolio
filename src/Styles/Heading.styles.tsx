@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { tablet, THEME_ALTER_COLOR, THEME_BLACK_COLOR } from './constants.styles';
+import { tablet } from './constants.styles';
 
 export const StyledHeading = styled.div`
 	display: flex;
@@ -12,7 +12,7 @@ export const StyledHeading = styled.div`
 		text-align: center;
 		border: none;
 	`)}
-	background-color: ${THEME_BLACK_COLOR};
+	background-color: ${(props) => props.theme.THEME_BLACK_COLOR};
 	.left {
 		width: 5vw;
 		${tablet(css`
@@ -22,7 +22,7 @@ export const StyledHeading = styled.div`
 	.right {
 		width: calc(85vw - 5px);
 		padding: 30px 0px;
-		border: 5px solid ${THEME_ALTER_COLOR};
+		border: 5px solid ${(props) => props.theme.THEME_ALTER_COLOR};
 		border-right: 0;
 		${tablet(css`
 			border: none;
@@ -46,11 +46,11 @@ export const StyledHeadingReverse = styled.div`
 		text-align: center;
 		border: none;
 	`)}
-	background-color: ${THEME_BLACK_COLOR};
+	background-color: ${(props) => props.theme.THEME_BLACK_COLOR};
 	.left {
 		width: 85vw;
 		padding: 30px 0px;
-		border: 5px solid ${THEME_ALTER_COLOR};
+		border: 5px solid ${(props) => props.theme.THEME_ALTER_COLOR};
 		border-left: 0;
 		
 		border-top-right-radius: 20px;

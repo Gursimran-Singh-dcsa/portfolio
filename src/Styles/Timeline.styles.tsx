@@ -1,10 +1,5 @@
 import styled, { css } from 'styled-components';
-import {
-	tablet,
-	THEME_ALTER_COLOR,
-	THEME_BLACK_COLOR,
-	THEME_TEXT_COLOR,
-} from './constants.styles';
+import { tablet } from './constants.styles';
 
 export const TimelineDiv = styled.div`
   max-width: 90vw;
@@ -15,9 +10,9 @@ export const TimelineDiv = styled.div`
 		`
 	)}
   position: relative;
-  background: ${THEME_BLACK_COLOR};
+  background: ${(props) => props.theme.THEME_BLACK_COLOR};
   height: auto;
-  color: ${THEME_TEXT_COLOR};
+  color: ${(props) => props.theme.THEME_TEXT_COLOR};
 }
 h1 {
   font-weight: 700;
@@ -32,7 +27,7 @@ p {
   content: '';
   position: absolute;
   width: 6px;
-  background-color: ${THEME_ALTER_COLOR};
+  background-color: ${(props) => props.theme.THEME_ALTER_COLOR};
   top: 0;
   bottom: 0;
   left: 50%;
@@ -53,8 +48,8 @@ p {
   width: 25px;
   height: 25px;
   right: -17px;
-  background-color: ${THEME_BLACK_COLOR};
-  border: 4px solid ${THEME_ALTER_COLOR};
+  background-color: ${(props) => props.theme.THEME_BLACK_COLOR};
+  border: 4px solid ${(props) => props.theme.THEME_ALTER_COLOR};
   top: 15px;
   border-radius: 50%;
   z-index: 1;
@@ -84,9 +79,12 @@ p {
   width: 0;
   z-index: 1;
   right: 30px;
-  border: medium solid ${THEME_ALTER_COLOR};
+  border: medium solid ${(props) => props.theme.THEME_ALTER_COLOR};
   border-width: 10px 0 10px 10px;
-  border-color: transparent transparent transparent ${THEME_ALTER_COLOR};
+  border-color: transparent transparent transparent ${(props) => {
+		console.log('ethe', props.theme.THEME_ALTER_COLOR);
+		return props.theme.THEME_ALTER_COLOR;
+	}};
 }
 
 /* Add arrows to the right container (pointing left) */
@@ -98,9 +96,10 @@ p {
   width: 0;
   z-index: 1;
   left: 30px;
-  border: medium solid ${THEME_ALTER_COLOR};
+  border: medium solid ${(props) => props.theme.THEME_ALTER_COLOR};
   border-width: 10px 10px 10px 0;
-  border-color: transparent ${THEME_ALTER_COLOR} transparent transparent;
+  border-color: transparent ${(props) =>
+		props.theme.THEME_ALTER_COLOR} transparent transparent;
 }
 
 /* Fix the circle for containers on the right side */
@@ -111,9 +110,9 @@ p {
 /* The actual content */
 .content {
   padding: 10px 20px;
-  background-color: ${THEME_BLACK_COLOR};
-  border: 1px solid ${THEME_ALTER_COLOR};
-  color: ${THEME_TEXT_COLOR} !important;
+  background-color: ${(props) => props.theme.THEME_BLACK_COLOR};
+  border: 1px solid ${(props) => props.theme.THEME_ALTER_COLOR};
+  color: ${(props) => props.theme.THEME_TEXT_COLOR} !important;
   position: relative;
   border-radius: 6px;
 
@@ -144,7 +143,8 @@ ${tablet(css`
 		left: 60px;
 		border: medium solid white;
 		border-width: 10px 10px 10px 0;
-		border-color: transparent ${THEME_ALTER_COLOR} transparent transparent;
+		border-color: transparent ${(props) => props.theme.THEME_ALTER_COLOR}
+			transparent transparent;
 	}
 
 	/* Make sure all circles are at the same spot */

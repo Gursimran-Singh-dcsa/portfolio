@@ -7,3 +7,10 @@ body {
 html {
   scroll-behavior: smooth;
 }
+.no-after:after {
+	content: none;
+}
+
+.no-before:before {
+	content: none;
+}

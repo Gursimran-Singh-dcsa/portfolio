@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
 import {
 	tablet,
-	THEME_ALTER_COLOR,
-	THEME_BLACK_COLOR,
-	THEME_TEXT_COLOR,
+	// (props) => props.theme.THEME_ALTER_COLOR,
+	// THEME_BLACK_COLOR,
+	// THEME_TEXT_COLOR,
 } from './constants.styles';
 
 export const BodySection = styled.section`
@@ -33,8 +33,8 @@ export const ComponentWrapper = styled.div`
 export const Button = styled.button<{ $type: 'themed' | 'simple' }>`
 	padding: 16px 36px;
 	background-color: ${(props) =>
-		props.$type === 'themed' ? THEME_ALTER_COLOR : THEME_BLACK_COLOR};
-	color: ${THEME_TEXT_COLOR};
+		props.$type === 'themed' ? (props) => props.theme.THEME_ALTER_COLOR : props.theme.THEME_BLACK_COLOR};
+	color: ${(props) => props.theme.THEME_TEXT_COLOR};
 	cursor: pointer;
 	border: none;
 `;

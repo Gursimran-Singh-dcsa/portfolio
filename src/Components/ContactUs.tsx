@@ -1,5 +1,5 @@
 import { THEME_TEXT_COLOR } from '../Styles/constants.styles';
-import { ContactWrapper, FromWrapper } from '../Styles/contactus.styles.';
+import { ContactWrapper, FromWrapper } from '../Styles/contactus.styles';
 
 const ContactUs = () => {
 	return (

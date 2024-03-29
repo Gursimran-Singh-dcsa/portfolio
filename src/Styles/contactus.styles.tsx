@@ -1,13 +1,13 @@
 import styled, { css } from 'styled-components';
 import {
 	tablet,
-	THEME_ALTER_COLOR,
-	THEME_BLACK_COLOR,
-	THEME_TEXT_COLOR,
+	// (props) => props.theme.THEME_ALTER_COLOR,
+	// THEME_BLACK_COLOR,
+	// THEME_TEXT_COLOR,
 } from './constants.styles';
 
 export const ContactWrapper = styled.div`
-	background: ${THEME_ALTER_COLOR};
+	background: ${(props) => props.theme.THEME_ALTER_COLOR};
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
@@ -42,8 +42,8 @@ export const FromWrapper = styled.div`
 	min-height: 50vh;
 	width: 60vw;
 	padding: 10px 10px;
-	border: 10px solid ${THEME_TEXT_COLOR};
-	background: ${THEME_BLACK_COLOR};
+	border: 10px solid ${(props) => props.theme.THEME_TEXT_COLOR};
+	background: ${(props) => props.theme.THEME_BLACK_COLOR};
 	display: flex;
 	flex-direction: column;
 	rowgap: 1.5rem;
@@ -93,8 +93,8 @@ export const FromWrapper = styled.div`
 		}
 		.submit {
 			width: 100%;
-			background-color: ${THEME_ALTER_COLOR};
-			color: ${THEME_TEXT_COLOR};
+			background-color: ${(props) => props.theme.THEME_ALTER_COLOR};
+			color: ${(props) => props.theme.THEME_TEXT_COLOR};
 			text-align: center;
 			text-transform: none;
 			justify-content: center;
@@ -109,12 +109,12 @@ export const FromWrapper = styled.div`
 			position: relative;
 			border: 0;
 			cursor: pointer;
-			border: 1px solid ${THEME_ALTER_COLOR};
+			border: 1px solid ${(props) => props.theme.THEME_ALTER_COLOR};
 		}
 		.submit:hover {
-			background-color: ${THEME_BLACK_COLOR};
-			color: ${THEME_ALTER_COLOR};
-			border: 1px solid ${THEME_ALTER_COLOR};
+			background-color: ${(props) => props.theme.THEME_BLACK_COLOR};
+			color: ${(props) => props.theme.THEME_ALTER_COLOR};
+			border: 1px solid ${(props) => props.theme.THEME_ALTER_COLOR};
 		}
 	}
 `;

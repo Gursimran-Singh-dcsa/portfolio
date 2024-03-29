@@ -1,13 +1,37 @@
 import { css } from 'styled-components';
 
-// export const THEME_BLACK_COLOR = 'rgba(0,0,0,0.85)';
-// export const THEME_BLACK_COLOR = 'rgba(0,0,0,1)';
-export const THEME_BLACK_COLOR = '#36454F';
-// export const THEME_ALTER_COLOR = '#cf123d';
-export const THEME_ALTER_COLOR = '#be8200';
-// export const THEME_ALTER_COLOR = '#FFA500';
+// export const getColors().THEME_BLACK_COLOR = 'rgba(0,0,0,0.85)';
+// export const getColors().THEME_BLACK_COLOR = 'rgba(0,0,0,1)';
+// export const getColors().THEME_BLACK_COLOR = '#36454F';
+// export const getColors().(props) => props.theme.THEME_ALTER_COLOR = '#cf123d';
+// export const getColors().(props) => props.theme.THEME_ALTER_COLOR = '#be8200';
+// export const getColors().(props) => props.theme.THEME_ALTER_COLOR = '#FFA500';
 export const FONT_SIZE_16 = '16px';
-export const THEME_TEXT_COLOR = '#ffffff';
+// export const getColors().THEME_TEXT_COLOR = '#ffffff';
+
+export const getColors = () => {
+	const defaultOptions = {
+		THEME_BLACK_COLOR: '#36454F',
+		THEME_ALTER_COLOR: '#be8200',
+		THEME_TEXT_COLOR: '#ffffff',
+		id: 0,
+	};
+	// @ts-expect-error
+	const theme = JSON.parse(sessionStorage.getItem('colors') ?? null);
+	if (!theme) {
+		return defaultOptions;
+	}
+	// const selectedOption = colorOptions.find((color: any) => color.active);
+	// if (!selectedOption) return defaultOptions;
+	return {
+		THEME_BLACK_COLOR: theme.THEME_BLACK_COLOR,
+		THEME_ALTER_COLOR: theme.THEME_ALTER_COLOR,
+		THEME_TEXT_COLOR: theme.THEME_TEXT_COLOR,
+		id: theme.id,
+	};
+};
+export const { THEME_BLACK_COLOR, THEME_ALTER_COLOR, THEME_TEXT_COLOR } =
+	getColors();
 
 export const SIZES = {
 	SMALL_MOBILE: '320px',

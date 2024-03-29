@@ -1,5 +1,5 @@
 import { Button, ComponentWrapper } from '../Styles/common.styles';
-import { THEME_ALTER_COLOR } from '../Styles/constants.styles';
+// import { (props) => props.theme.THEME_ALTER_COLOR } from '../Styles/constants.styles';
 import { LeftWrapper, RightWrapper } from '../Styles/Header.styles';
 import {
 	RoleWrapper,
@@ -8,8 +8,11 @@ import {
 	WorkNameWrapper,
 } from '../Styles/work';
 import { CounterText } from '../Styles/counter.styles';
+import { useContext } from 'react';
+import { ThemeContext } from '../Contexts/ThemeContext';
 
 export const Xataka = () => {
+	const { theme }: any = useContext(ThemeContext);
 	return (
 		<ComponentWrapper id="work">
 			<LeftWrapper>
@@ -45,7 +48,7 @@ export const Xataka = () => {
 			<RightWrapper $showNone>
 				<img
 					src="/xataka-nobg.png"
-					style={{ backgroundColor: THEME_ALTER_COLOR }}
+					style={{ backgroundColor: theme.THEME_ALTER_COLOR }}
 				/>
 			</RightWrapper>
 		</ComponentWrapper>

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { tablet, THEME_ALTER_COLOR, THEME_BLACK_COLOR } from './constants.styles';
+import { tablet } from './constants.styles';
 
 export const StyledHeader = styled.header`
 	width: 10vw;
@@ -48,7 +48,7 @@ export const StyledHeader = styled.header`
 		flex-direction: row;
 	`)}
 
-	background-color: ${THEME_ALTER_COLOR};
+	background-color: ${(props) => props.theme.THEME_ALTER_COLOR};
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -56,8 +56,8 @@ export const StyledHeader = styled.header`
 `;
 
 export const LeftWrapper = styled.section`
-	background: ${THEME_BLACK_COLOR};
-	color: ${THEME_ALTER_COLOR};
+	background: ${(props) => props.theme.THEME_BLACK_COLOR};
+	color: ${(props) => props.theme.THEME_ALTER_COLOR};
 	width: 45vw;
 	display: flex;
 	flex-direction: column;
@@ -72,7 +72,7 @@ export const LeftWrapper = styled.section`
 		letter-spacing: -2px;
 		font-weight: 700;
 		overflow: visible;
-		color: ${THEME_BLACK_COLOR};
+		color: ${(props) => props.theme.THEME_BLACK_COLOR};
 		-webkit-text-stroke-width: 1px;
 		-webkit-text-stroke-color: #ffffff;
 		${tablet(css`
@@ -84,8 +84,8 @@ export const LeftWrapper = styled.section`
 `;
 
 export const RightWrapper = styled.section<{ $showNone?: boolean }>`
-	background: ${THEME_ALTER_COLOR};
-	color: ${THEME_BLACK_COLOR};
+	background: ${(props) => props.theme.THEME_ALTER_COLOR};
+	color: ${(props) => props.theme.THEME_BLACK_COLOR};
 	width: 45vw;
 	display: flex;
 	flex-direction: column;
@@ -95,7 +95,7 @@ export const RightWrapper = styled.section<{ $showNone?: boolean }>`
 		${(props: any) =>
 			props.$showNone
 				? css`
-						border: 1px solid ${THEME_ALTER_COLOR};
+						border: 1px solid ${(props) => props.theme.THEME_ALTER_COLOR};
 						* {
 							display: none;
 						}

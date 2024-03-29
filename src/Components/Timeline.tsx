@@ -1,9 +1,29 @@
+import { useEffect, useState } from 'react';
 import { TimelineDiv } from '../Styles/Timeline.styles';
 
 const Timeline = () => {
+	const [removeStyles, setRemoveStyles] = useState(false);
+	useEffect(() => {
+		setRemoveStyles(true);
+		setTimeout(() => {
+			setRemoveStyles(false);
+		}, 0);
+	}, []);
+	if (removeStyles) {
+		return (
+			<style>{`
+		.timeline::after {content: none}
+		.timeline::before {content: none}
+		.left::before {content: none}
+		.left::after {content: none}
+		.right::after {content: none}
+		.right::before {content: none}
+		`}</style>
+		);
+	}
 	return (
 		<TimelineDiv className="timeline">
-			<div className="container left">
+			<div className={`container left`}>
 				<div className="content">
 					<h1>1995</h1>
 					<p>
