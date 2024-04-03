@@ -25,7 +25,7 @@ const Header = () => {
 					})()}
 				</span>
 				<span>MCA</span>
-				<a target="_blank" href="/Resume.pdf">
+				<a target="_blank" href={`${basePath}Resume.pdf`}>
 					<span
 						style={{ textDecoration: 'underline', color: THEME_BLACK_COLOR }}
 					>

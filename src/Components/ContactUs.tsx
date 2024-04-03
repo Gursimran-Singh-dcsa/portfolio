@@ -129,7 +129,7 @@ const ContactUs = () => {
 					</a>
 				</div>
 				<div className="mobile_only" style={{ marginTop: '1rem' }}>
-					<a target="_blank" href="/Resume.pdf">
+					<a target="_blank" href={`${basePath}Resume.pdf`}>
 						<span
 							style={{ textDecoration: 'underline', color: THEME_TEXT_COLOR }}
 						>
