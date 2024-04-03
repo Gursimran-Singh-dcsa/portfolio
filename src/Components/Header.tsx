@@ -1,10 +1,11 @@
+import { basePath } from '../constants';
 import { THEME_BLACK_COLOR } from '../Styles/constants.styles';
 import { StyledHeader } from '../Styles/Header.styles';
 
 const Header = () => {
 	return (
 		<StyledHeader>
-			<img className="me" src="/me.png" alt="me" />
+			<img className="me" src={`${basePath}me.png`} alt="me" />
 			<span className="mobile_about_me">
 				Proudly <span style={{ fontSize: '20px' }}>🇮🇳</span>
 			</span>
@@ -37,22 +38,22 @@ const Header = () => {
 					href="https://www.linkedin.com/in/gursimran-singh-b83a3b126"
 					target="_blank"
 				>
-					<img src="/linkedin.png" alt="linkedin" />
+					<img src={`${basePath}linkedin.png`} alt="linkedin" />
 				</a>
 				<a href="https://github.com/Gursimran-Singh-dcsa" target="_blank">
-					<img src="/github.png" alt="github" />
+					<img src={`${basePath}github.png`} alt="github" />
 				</a>
 				<a href="https://wa.me/+918950848075" target="_blank">
-					<img src="/whatsapp.png" alt="whatsapp" />
+					<img src={`${basePath}whatsapp.png`} alt="whatsapp" />
 				</a>
 				<a href="https://www.facebook.com/gursimran.singh.754" target="_blank">
-					<img src="/facebook.png" alt="facebook" />
+					<img src={`${basePath}facebook.png`} alt="facebook" />
 				</a>
 				<a href="https://www.instagram.com/gursimran__singh_/" target="_blank">
-					<img src="/instagram.png" alt="instagram" />
+					<img src={`${basePath}instagram.png`} alt="instagram" />
 				</a>
 				<a href="https://twitter.com/gursimransing23" target="_blank">
-					<img src="/x.png" alt="x" />
+					<img src={`${basePath}x.png`} alt="x" />
 				</a>
 			</div>
 		</StyledHeader>

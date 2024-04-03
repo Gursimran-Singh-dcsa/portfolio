@@ -10,6 +10,7 @@ import {
 import { CounterText } from '../Styles/counter.styles';
 import { useContext } from 'react';
 import { ThemeContext } from '../Contexts/ThemeContext';
+import { basePath } from '../constants';
 
 export const Xataka = () => {
 	const { theme }: any = useContext(ThemeContext);
@@ -47,7 +48,7 @@ export const Xataka = () => {
 			</LeftWrapper>
 			<RightWrapper $showNone>
 				<img
-					src="/xataka-nobg.png"
+					src={`${basePath}xataka-nobg.png`}
 					style={{ backgroundColor: theme.THEME_ALTER_COLOR }}
 				/>
 			</RightWrapper>

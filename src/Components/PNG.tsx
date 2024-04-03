@@ -10,6 +10,7 @@ import {
 import { CounterText } from '../Styles/counter.styles';
 import { useContext } from 'react';
 import { ThemeContext } from '../Contexts/ThemeContext';
+import { basePath } from '../constants';
 
 export const PNG = () => {
 	const {theme} = useContext(ThemeContext)
@@ -44,7 +45,7 @@ export const PNG = () => {
 			</LeftWrapper>
 			<RightWrapper $showNone>
 				<img
-					src="/png-nobg.png"
+					src={`${basePath}png-nobg.png`}
 					style={{ backgroundColor: theme.THEME_ALTER_COLOR }}
 				/>
 			</RightWrapper>

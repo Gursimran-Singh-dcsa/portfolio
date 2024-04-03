@@ -1,3 +1,4 @@
+import { basePath } from '../constants';
 import { Button, ComponentWrapper } from '../Styles/common.styles';
 import {
 	THEME_BLACK_COLOR,
@@ -41,7 +42,7 @@ export const AboutMe = () => {
 			</LeftWrapper>
 			<RightWrapper>
 				<div style={{ padding: '100px 30px 30px ', textAlign: 'center' }}>
-					<img src="/about-sticker.png" alt="sticker" />
+					<img src={`${basePath}about-sticker.png`} alt="sticker" />
 				</div>
 
 				<div

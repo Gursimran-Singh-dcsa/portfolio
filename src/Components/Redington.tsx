@@ -10,6 +10,7 @@ import {
 import { CounterText } from '../Styles/counter.styles';
 import { useContext } from 'react';
 import { ThemeContext } from '../Contexts/ThemeContext';
+import { basePath } from '../constants';
 
 export const Redington = () => {
 	const {theme}:any = useContext(ThemeContext)
@@ -47,7 +48,7 @@ export const Redington = () => {
 			</LeftWrapper>
 			<RightWrapper $showNone>
 				<img
-					src="/Redington-nobg.png"
+					src={`${basePath}Redington-nobg.png`}
 					style={{ backgroundColor: theme.THEME_ALTER_COLOR }}
 				/>
 			</RightWrapper>

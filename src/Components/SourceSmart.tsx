@@ -10,6 +10,7 @@ import {
 import { CounterText } from '../Styles/counter.styles';
 import { useContext } from 'react';
 import { ThemeContext } from '../Contexts/ThemeContext';
+import { basePath } from '../constants';
 
 export const SourceSmart = () => {
 	const { theme }: any = useContext(ThemeContext);
@@ -48,7 +49,7 @@ export const SourceSmart = () => {
 			</LeftWrapper>
 			<RightWrapper $showNone>
 				<img
-					src="/source-smart-nobg.png"
+					src={`${basePath}source-smart-nobg.png`}
 					style={{ backgroundColor: theme.THEME_ALTER_COLOR }}
 				/>
 			</RightWrapper>
