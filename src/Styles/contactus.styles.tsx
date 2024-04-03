@@ -24,6 +24,7 @@ export const ContactWrapper = styled.div`
 	.mobile_links {
 		display: none;
 		width: 100vw;
+		${(props) => (props.theme.invertIcons ? 'filter: invert(1)' : '')};
 		${tablet(css`
 			display: flex;
 			justify-content: center;

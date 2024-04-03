@@ -18,7 +18,7 @@ export const AboutMe = () => {
 					}}
 				>
 					<div className="intro_text">Hi there, I'm </div>
-					<div style={{ color: THEME_TEXT_COLOR }}> Gursimran Singh </div>
+					<div style={{ color: 'white' }}> Gursimran Singh </div>
 					<div className="intro_text">
 						Full Stack Developer & learning enthusiast{' '}
 					</div>
@@ -52,7 +52,9 @@ export const AboutMe = () => {
 					}}
 				>
 					<a href="#work">
-						<Button style={{color: 'white'}} $type="simple">See My Work</Button>
+						<Button style={{ color: 'white' }} $type="simple">
+							See My Work
+						</Button>
 					</a>
 				</div>
 			</RightWrapper>

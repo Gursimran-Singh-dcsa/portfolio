@@ -11,6 +11,7 @@ export const FloatingContent = () => {
 			light: '#be8200',
 			text: '#ffffff',
 			active: false,
+			skillButtonColor: '#36454F',
 		},
 		{
 			id: 1,
@@ -18,12 +19,14 @@ export const FloatingContent = () => {
 			light: '#FFA500',
 			text: '#ffffff',
 			active: false,
+			skillButtonColor: '#000000',
 		},
 		{
 			id: 2,
 			dark: '#000000',
 			light: '#be8200',
 			text: '#ffffff',
+			skillButtonColor: '#000000',
 			active: false,
 		},
 		{
@@ -32,6 +35,7 @@ export const FloatingContent = () => {
 			light: '#FFA500',
 			text: '#ffffff',
 			active: false,
+			skillButtonColor: '#36454F',
 		},
 		{
 			id: 4,
@@ -39,6 +43,7 @@ export const FloatingContent = () => {
 			light: '#cf123d',
 			text: '#ffffff',
 			active: true,
+			skillButtonColor: '#000000',
 		},
 		{
 			id: 5,
@@ -48,6 +53,7 @@ export const FloatingContent = () => {
 			text: '#000000',
 			active: false,
 			invertIcons: true,
+			skillButtonColor: '#000000',
 		},
 	]);
 
@@ -95,6 +101,7 @@ export const FloatingContent = () => {
 										id: color.id,
 										active: color.id === option.id ? true : false,
 										invertIcons: option.invertIcons ?? false,
+										skillButtonColor: color.skillButtonColor,
 									};
 								}
 								return {

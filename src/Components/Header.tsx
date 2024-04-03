@@ -4,14 +4,10 @@ import { StyledHeader } from '../Styles/Header.styles';
 const Header = () => {
 	return (
 		<StyledHeader>
-			<img
-				className="me"
-				src="/me.png"
-				alt="me"
-			/>
-				<span className="mobile_about_me">
-					Proudly <span style={{ fontSize: '20px' }}>🇮🇳</span>
-				</span>
+			<img className="me" src="/me.png" alt="me" />
+			<span className="mobile_about_me">
+				Proudly <span style={{ fontSize: '20px' }}>🇮🇳</span>
+			</span>
 			<div className="desktop_aboutme">
 				<span>
 					Proudly <span style={{ fontSize: '20px' }}>🇮🇳</span>
@@ -23,7 +19,7 @@ const Header = () => {
 						const age = new Date(ageMs);
 						return (
 							Math.floor(Math.abs(age.getUTCFullYear() - 1970)) +
-							'+ years experince'
+							'+ years in IT'
 						);
 					})()}
 				</span>
@@ -36,19 +32,14 @@ const Header = () => {
 					</span>
 				</a>
 			</div>
-			<div
-				className="desktop_links"
-			>
+			<div className="desktop_links">
 				<a
 					href="https://www.linkedin.com/in/gursimran-singh-b83a3b126"
 					target="_blank"
 				>
 					<img src="/linkedin.png" alt="linkedin" />
 				</a>
-				<a
-					href="https://github.com/Gursimran-Singh-dcsa"
-					target="_blank"
-				>
+				<a href="https://github.com/Gursimran-Singh-dcsa" target="_blank">
 					<img src="/github.png" alt="github" />
 				</a>
 				<a href="https://wa.me/+918950848075" target="_blank">

@@ -26,6 +26,7 @@ export const StyledHeading = styled.div`
 		border-right: 0;
 		${tablet(css`
 			border: none;
+			width: 100vw;
 		`)}
 		border-top-left-radius: 20px;
 		border-bottom-left-radius: 20px;
@@ -48,41 +49,6 @@ export const StyledHeading = styled.div`
 		display: flex;
 		flex-wrap: wrap;
 		column-gap: 3.5rem;
-		.card {
-			color: ${(props) => props.theme.THEME_TEXT_COLOR};
-			background: ${(props) => props.theme.THEME_ALTER_COLOR};
-			height: 244px;
-			width: 196px;
-			border-radius: 20px;
-			padding: 18px;
-			.react {
-				width: 30px;
-				height: 30px;
-			}
-		}
-		.heading {
-			display: flex;
-			align-items: center;
-			padding: 0 20%;
-			font-size: 1.5rem;
-			line-height: 1.5rem;
-			column-gap: 1.5rem;
-			height: 30px;
-			.express {
-				display: block;
-				font: 20px helvetica neue, open sans, sans-serif;
-				font-weight: 300;
-				margin-bottom: 0.25em;
-			}
-		}
-		.card-content {
-			display: flex;
-			align-items: center;
-			line-height: 20px;
-			padding: 15px 15px;
-			margin-top: auto;
-		}
-		
 	}
 `;
 
@@ -114,6 +80,7 @@ export const StyledHeadingReverse = styled.div`
 		${tablet(css`
 			border: none;
 			justify-content: center;
+			width: 100vw;
 		`)}
 	}
 	.right {

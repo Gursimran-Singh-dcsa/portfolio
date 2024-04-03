@@ -11,10 +11,14 @@ export const FONT_SIZE_16 = '16px';
 
 export const getColors = () => {
 	const defaultOptions = {
-		THEME_BLACK_COLOR: '#36454F',
-		THEME_ALTER_COLOR: '#be8200',
-		THEME_TEXT_COLOR: '#ffffff',
-		id: 0,
+		id: 5,
+		THEME_BLACK_COLOR: '#000000',
+		THEME_ALTER_COLOR: 'rgb(254, 212, 58)',
+		// text: '#ffffff',
+		THEME_TEXT_COLOR: '#000000',
+		active: false,
+		invertIcons: true,
+		skillButtonColor: '#000000',
 	};
 	// @ts-expect-error
 	const theme = JSON.parse(sessionStorage.getItem('colors') ?? null);
@@ -23,12 +27,7 @@ export const getColors = () => {
 	}
 	// const selectedOption = colorOptions.find((color: any) => color.active);
 	// if (!selectedOption) return defaultOptions;
-	return {
-		THEME_BLACK_COLOR: theme.THEME_BLACK_COLOR,
-		THEME_ALTER_COLOR: theme.THEME_ALTER_COLOR,
-		THEME_TEXT_COLOR: theme.THEME_TEXT_COLOR,
-		id: theme.id,
-	};
+	return theme;
 };
 export const { THEME_BLACK_COLOR, THEME_ALTER_COLOR, THEME_TEXT_COLOR } =
 	getColors();

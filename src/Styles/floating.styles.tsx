@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { tablet } from './constants.styles';
 
 export const FloatingButton = styled.div`
 	border-radius: 20px;
-	
 	height: 30px;
 	width: 30px;
 	background-image: url('https://static.canva.com/web/images/788ee7a68293bd0264fc31f22c31e62d.png');
@@ -12,4 +12,8 @@ export const FloatingButton = styled.div`
 	top: 90vh;
 	left: 95vw;
 	cursor: pointer;
+	${tablet(css`
+	top: 90vh;
+	left: calc(95vw - 30px);
+	`)}
 `;
