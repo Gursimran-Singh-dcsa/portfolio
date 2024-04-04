@@ -78,6 +78,11 @@ const Expertise = () => {
 						'MongoDB Compass',
 						'MySql Server',
 						'Postman',
+						'Github Pages',
+						'Webpack',
+						'Gulp',
+						'Vite',
+						'Composer',
 					].map((skillset) => {
 						return <SkillButton key={skillset}>{skillset}</SkillButton>;
 					})}

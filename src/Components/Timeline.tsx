@@ -117,7 +117,7 @@ const Timelinecomp = () => {
 					</h4>
 					<p>
 						Completed Post Graduation in Masters of Computer Application from
-						Panjab University University.
+						Panjab University Chandigarh.
 					</p>
 				</VerticalTimelineElement>
 				<VerticalTimelineElement

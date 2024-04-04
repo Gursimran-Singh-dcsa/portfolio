@@ -2,7 +2,6 @@ import { basePath } from '../constants';
 import { Button, ComponentWrapper } from '../Styles/common.styles';
 import {
 	THEME_BLACK_COLOR,
-	THEME_TEXT_COLOR,
 } from '../Styles/constants.styles';
 import { LeftWrapper, RightWrapper } from '../Styles/Header.styles';
 
@@ -26,7 +25,7 @@ export const AboutMe = () => {
 				</div>
 				<div
 					style={{
-						color: THEME_TEXT_COLOR,
+						color: 'white',
 						padding: '0px 30px 30px ',
 						fontSize: '2rem',
 					}}
