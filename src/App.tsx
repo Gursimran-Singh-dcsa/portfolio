@@ -16,7 +16,6 @@ import { Xataka } from './Components/Xataka';
 import { ThemeContext } from './Contexts/ThemeContext';
 import { BodySection } from './Styles/common.styles';
 import { FloatingButton } from './Styles/floating.styles';
-// import { LeftWrapper, RightWrapper } from './Styles/Header.styles';
 
 function App() {
 	const [openColorPicker, setOpenColorPicker] = useState(false);

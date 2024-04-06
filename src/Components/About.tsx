@@ -1,8 +1,6 @@
 import { basePath } from '../constants';
 import { Button, ComponentWrapper } from '../Styles/common.styles';
-import {
-	THEME_BLACK_COLOR,
-} from '../Styles/constants.styles';
+import { THEME_BLACK_COLOR } from '../Styles/constants.styles';
 import { LeftWrapper, RightWrapper } from '../Styles/Header.styles';
 
 export const AboutMe = () => {
@@ -18,7 +16,13 @@ export const AboutMe = () => {
 					}}
 				>
 					<div className="intro_text">Hi there, I'm </div>
-					<div style={{ color: 'white' }}> Gursimran Singh </div>
+					<div style={{ color: 'white' }}>
+						{/* Gursimran Singh */}
+						<h1 style={{ margin: 0, fontSize: 'inherit' }}>
+							{' '}
+							Gursimran Singh
+						</h1>{' '}
+					</div>
 					<div className="intro_text">
 						Full Stack Developer & learning enthusiast{' '}
 					</div>
