@@ -53,7 +53,7 @@ const Header = () => {
 					<img src={`${basePath}instagram.png`} alt="instagram" />
 				</a>
 				<a href="https://twitter.com/gursimransing23" target="_blank">
-					<img src={`${basePath}x.png`} alt="x" />
+					<img src={`${basePath}x.png`} alt="x" width='50' height='50' />
 				</a>
 			</div>
 		</StyledHeader>
