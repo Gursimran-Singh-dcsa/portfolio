@@ -1,0 +1,29 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+	--font-sans: "Roboto", ui-sans-serif, system-ui, sans-serif;
+	--font-display: "Roboto", ui-sans-serif, system-ui, sans-serif;
+	/* Palette from movematerelocations.co.nz: primary #004cdf, midnight #0b1f3a; sky is a lighter tint for text on navy */
+	--color-primary: #004cdf;
+	--color-navy: #0b1f3a;
+	--color-sky: #6ea2ff;
+	--color-soft: #f1f5fb;
+	--animate-float: float 6s ease-in-out infinite;
+	@keyframes float {
+		0%, 100% { transform: translateY(0); }
+		50% { transform: translateY(-12px); }
+	}
+}
+
+html { scroll-behavior: smooth; }
+body { @apply bg-soft text-slate-600 font-sans antialiased; }
+::selection { background: #004cdfaa; color: #fff; }
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+
+/* Horizontal rows scroll without a visible scrollbar (arrows + peeking cards show there is more) */
+.scroll-row { scrollbar-width: none; -ms-overflow-style: none; }
+.scroll-row::-webkit-scrollbar { display: none; }
