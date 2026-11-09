@@ -13,11 +13,16 @@ def font(size, bold=True):
     return ImageFont.load_default()
 
 
-def center(d, box, text, f, fill):
-    """Center text's visible ink in the box, horizontally and vertically."""
-    l, t, r, b = d.textbbox((0, 0), text, font=f)
+def center(d, box, text, f, fill, ink=False):
+    """Center text in the box. Default uses the font's vertical middle (anchor="mm"), so every line sits on a
+    consistent baseline regardless of its letters. ink=True centers the visible glyphs instead; use it only for
+    short caps/number labels (E, A, T, ELB) inside shapes."""
     cx, cy = (box[0] + box[2]) / 2, (box[1] + box[3]) / 2
-    d.text((cx - (l + r) / 2, cy - (t + b) / 2), text, font=f, fill=fill)
+    if ink:
+        l, t, r, b = d.textbbox((0, 0), text, font=f)
+        d.text((cx - (l + r) / 2, cy - (t + b) / 2), text, font=f, fill=fill)
+    else:
+        d.text((cx, cy), text, font=f, fill=fill, anchor="mm")
 
 
 def aws():
@@ -36,7 +41,7 @@ def aws():
         for k in range(n):
             x, y = cx + 18 + (k % 4) * 54, 172 + (k // 4) * 70
             d.rounded_rectangle((x, y, x + 44, y + 50), 8, fill=(239, 68, 68))
-            center(d, (x, y, x + 44, y + 50), "ELB", font(14), "white")
+            center(d, (x, y, x + 44, y + 50), "ELB", font(14), "white", ink=True)
     center(d, (40, 410, 580, 460), "13 load balancers", font(34), NAVY)
     center(d, (40, 460, 580, 500), "Extended support", font(26, False), (239, 68, 68))
     center(d, (40, 510, 580, 570), "~USD 2,400 / month", font(36), NAVY)
@@ -44,7 +49,7 @@ def aws():
     d.rounded_rectangle((760, 120, 1020, 380), 16, outline=SKY, width=3)
     d.text((774, 130), "EKS cluster", font=font(20), fill="white")
     d.rounded_rectangle((850, 175, 930, 235), 10, fill=(34, 197, 94))
-    center(d, (850, 175, 930, 235), "1 ELB", font(18), "white")
+    center(d, (850, 175, 930, 235), "1 ELB", font(18), "white", ink=True)
     for k in range(6):
         x, y = 780 + (k % 3) * 76, 270 + (k // 3) * 54
         d.rounded_rectangle((x, y, x + 66, y + 40), 8, fill=PRIMARY)
@@ -58,31 +63,31 @@ def aws():
 
 
 def eeat():
-    W, H = 1200, 440
+    W, H = 1200, 500
     im = Image.new("RGB", (W, H), SOFT)
     d = ImageDraw.Draw(im)
     items = [("E", "Experience", "First-hand, real-world use of the topic"), ("E", "Expertise", "Knowledge and qualifications to write it"),
              ("A", "Authoritativeness", "Recognised as a go-to source"), ("T", "Trustworthiness", "Accurate, sourced and transparent")]
+    body = font(22, False)
     for i, (letter, name, desc) in enumerate(items):
         x = 40 + i * 285
-        d.rounded_rectangle((x, 40, x + 265, 350), 28, fill=NAVY if i == 3 else "white", outline=(203, 213, 225), width=2)
-        d.ellipse((x + 82, 65, x + 182, 165), fill=PRIMARY)
-        center(d, (x + 82, 65, x + 182, 165), letter, font(64), "white")
         dark = i == 3
-        center(d, (x, 190, x + 265, 230), name, font(26), "white" if dark else NAVY)
-        # wrap description
+        d.rounded_rectangle((x, 40, x + 265, 400), 28, fill=NAVY if dark else "white", outline=(203, 213, 225), width=2)
+        d.ellipse((x + 77, 70, x + 187, 180), fill=PRIMARY)
+        center(d, (x + 77, 70, x + 187, 180), letter, font(66), "white", ink=True)
+        center(d, (x, 215, x + 265, 255), name, font(27), "white" if dark else NAVY)
         words, lines, cur = desc.split(), [], ""
         for w in words:
             t = f"{cur} {w}".strip()
-            if d.textlength(t, font=font(21, False)) <= 225:
+            if d.textlength(t, font=body) <= 240:
                 cur = t
             else:
                 lines.append(cur)
                 cur = w
         lines.append(cur)
         for j, ln in enumerate(lines):
-            center(d, (x, 245 + j * 30, x + 265, 275), ln, font(21, False), (203, 213, 225) if dark else (71, 85, 105))
-    center(d, (0, 380, W, 410), "Trust is the most important of the four", font(22, False), (71, 85, 105))
+            center(d, (x, 285 + j * 38, x + 265, 323 + j * 38), ln, body, (203, 213, 225) if dark else (71, 85, 105))
+    center(d, (0, 425, W, 475), "Trust is the most important of the four", font(24, False), (71, 85, 105))
     im.save("public/blog/images/eeat.png", optimize=True)
 
 
@@ -100,7 +105,7 @@ def aws_mobile():
         for k in range(n):
             x, y = cx + 16 + (k % 4) * 76, 160 + (k // 4) * 66
             d.rounded_rectangle((x, y, x + 64, y + 54), 8, fill=(239, 68, 68))
-            center(d, (x, y, x + 64, y + 54), "ELB", font(20), "white")
+            center(d, (x, y, x + 64, y + 54), "ELB", font(20), "white", ink=True)
     center(d, (30, 320, 770, 370), "13 load balancers", font(44), NAVY)
     center(d, (30, 372, 770, 415), "Extended support", font(32, False), (239, 68, 68))
     center(d, (30, 420, 770, 470), "~USD 2,400 / month", font(42), NAVY)
@@ -109,7 +114,7 @@ def aws_mobile():
     d.rounded_rectangle((220, 605, 580, 780), 16, outline=SKY, width=3)
     d.text((234, 612), "EKS cluster", font=font(22), fill="white")
     d.rounded_rectangle((330, 640, 470, 690), 10, fill=(34, 197, 94))
-    center(d, (330, 640, 470, 690), "1 ELB", font(24), "white")
+    center(d, (330, 640, 470, 690), "1 ELB", font(24), "white", ink=True)
     for k in range(6):
         x, y = 234 + (k % 3) * 116, 702 + (k // 3) * 36
         d.rounded_rectangle((x, y, x + 106, y + 30), 6, fill=PRIMARY)
@@ -131,9 +136,9 @@ def eeat_mobile():
         x, y = 30 + (i % 2) * 385, 30 + (i // 2) * 340
         d.rounded_rectangle((x, y, x + 355, y + 310), 28, fill=NAVY if i == 3 else "white", outline=(203, 213, 225), width=2)
         d.ellipse((x + 132, y + 22, x + 222, y + 112), fill=PRIMARY)
-        center(d, (x + 132, y + 22, x + 222, y + 112), letter, font(56), "white")
+        center(d, (x + 132, y + 22, x + 222, y + 112), letter, font(56), "white", ink=True)
         dark = i == 3
-        center(d, (x, y + 125, x + 355, y + 170), name, font(32), "white" if dark else NAVY)
+        center(d, (x, y + 130, x + 355, y + 175), name, font(32), "white" if dark else NAVY)
         words, lines, cur = desc.split(), [], ""
         for w in words:
             t = f"{cur} {w}".strip()
@@ -144,7 +149,7 @@ def eeat_mobile():
                 cur = w
         lines.append(cur)
         for j, ln in enumerate(lines):
-            center(d, (x, y + 185 + j * 34, x + 355, y + 219 + j * 34), ln, font(25, False), (203, 213, 225) if dark else (71, 85, 105))
+            center(d, (x, y + 200 + j * 40, x + 355, y + 240 + j * 40), ln, font(25, False), (203, 213, 225) if dark else (71, 85, 105))
     center(d, (0, 715, W, 760), "Trust is the most important of the four", font(26, False), (71, 85, 105))
     im.save("public/blog/images/eeat-mobile.png", optimize=True)
 
