@@ -208,6 +208,7 @@ export const seo = {
 		'hire full stack developer',
 		'ecommerce website developer',
 		'Shopify developer',
+		'digital marketing services',
 		'Trantor software engineer',
 	],
 };
@@ -217,6 +218,7 @@ export const services = [
 	{ title: 'E-commerce / Shopify websites', text: 'Online stores and e-commerce websites, including Shopify, built to be fast, easy to manage and ready to sell, from product pages and checkout to launch.' },
 	{ title: 'AI-powered features', text: 'OpenAI, RAG, vector search and function calling, as in SourceSmart and my AI task assistant: practical AI inside real products.' },
 	{ title: 'SEO & performance', text: 'Technical SEO, structured data and content structure that helps a business show up in search. One case study reached page 1 for a very competitive local keyword.' },
+	{ title: 'Digital marketing services', text: 'Social media posts, blogging and search-friendly content that put a business in front of local customers, like the work that took Move Mate Relocations to page 1 for a very competitive keyword.' },
 	{ title: 'Cloud hosting & deployments', text: 'Setting up cloud hosting and deployments on AWS, Docker and Kubernetes with CI/CD, and reviewing setups to cut waste: for one customer, fewer load balancers and standard Kubernetes support cut the bill by about two-thirds.' },
 ];
 
