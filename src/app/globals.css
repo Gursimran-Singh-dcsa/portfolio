@@ -27,3 +27,6 @@ body { @apply bg-soft text-slate-600 font-sans antialiased; }
 /* Horizontal rows scroll without a visible scrollbar (arrows + peeking cards show there is more) */
 .scroll-row { scrollbar-width: none; -ms-overflow-style: none; }
 .scroll-row::-webkit-scrollbar { display: none; }
+
+/* Tailwind v4 resets buttons to the default cursor: restore the pointer for anything clickable */
+button:not(:disabled), [role="button"], summary { cursor: pointer; }

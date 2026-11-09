@@ -59,10 +59,10 @@ export const BlogRow = ({ posts }: { posts: PostCard[] }) => {
 					</Link>
 				))}
 			</div>
-			<button type="button" onClick={() => go(-1)} aria-label="Previous posts" tabIndex={left ? 0 : -1} className={`absolute left-2 top-[34%] grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-slate-200 bg-white/95 text-navy shadow-lg backdrop-blur transition hover:bg-primary hover:text-white ${left ? 'opacity-100' : 'pointer-events-none opacity-0'}`}>
+			<button type="button" onClick={() => go(-1)} aria-label="Previous posts" tabIndex={left ? 0 : -1} className={`absolute left-2 top-[34%] grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-slate-200 bg-white/95 text-navy shadow-lg backdrop-blur cursor-pointer transition hover:border-primary hover:bg-primary/10 hover:text-primary hover:shadow-xl ${left ? 'opacity-100' : 'pointer-events-none opacity-0'}`}>
 				<Icon name="arrow" className="h-5 w-5 rotate-180" />
 			</button>
-			<button type="button" onClick={() => go(1)} aria-label="Next posts" tabIndex={right ? 0 : -1} className={`absolute right-2 top-[34%] grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-slate-200 bg-white/95 text-navy shadow-lg backdrop-blur transition hover:bg-primary hover:text-white ${right ? 'opacity-100' : 'pointer-events-none opacity-0'}`}>
+			<button type="button" onClick={() => go(1)} aria-label="Next posts" tabIndex={right ? 0 : -1} className={`absolute right-2 top-[34%] grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-slate-200 bg-white/95 text-navy shadow-lg backdrop-blur cursor-pointer transition hover:border-primary hover:bg-primary/10 hover:text-primary hover:shadow-xl ${right ? 'opacity-100' : 'pointer-events-none opacity-0'}`}>
 				<Icon name="arrow" className="h-5 w-5" />
 			</button>
 		</div>
