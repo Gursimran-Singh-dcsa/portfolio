@@ -16,7 +16,7 @@ Personal portfolio at https://gursimran.in (GitHub Pages, custom domain).
 - Contact is WhatsApp-only: every message goes to **+91-8950848075** via `wa.me/918950848075`. Never reintroduce another contact backend.
 
 ## Deploy (keep as is)
-- `npm run deploy` → `predeploy` runs `next build`, then `gh-pages -t -d out` pushes `out/` to the `gh-pages` branch (`-t` is required so `.nojekyll` is published; without it GitHub Pages drops `_next/`).
+- `npm run deploy` → `predeploy` runs `next build` and strips `.DS_Store`, then `gh-pages -t -d out` pushes `out/` to the `gh-pages` branch (`-t` is required so `.nojekyll` is published; without it GitHub Pages drops `_next/`).
 - `public/CNAME` (`gursimran.in`) and `public/.nojekyll` MUST stay.
 
 ## Role titles

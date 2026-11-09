@@ -10,7 +10,7 @@
     "start": "npx serve out",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "deploy": "gh-pages -t -d out",
-    "predeploy": "npm run build"
+    "predeploy": "npm run build && find out -name .DS_Store -delete"
   },
   "dependencies": {
     "marked": "^18.1.3",
