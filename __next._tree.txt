@@ -1,6 +1,6 @@
-:HL["/_next/static/chunks/2p9e_ka3qqymf.css","style"]
+:HL["/_next/static/chunks/1q557h5e8anj8.css","style"]
 :HL["https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap","style"]
 :HL["/profile.png","image",{"fetchPriority":"high"}]
 :HL["/certs/claude-architect.png","image"]
 1:[["children",{"s":"__PAGE__","h":128}]]
-0:{"b":"ebBNmnMRQBA1aN9BHzNYb","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
+0:{"b":"qnAxCvSGnLUtITLUvRkD7","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
