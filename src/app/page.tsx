@@ -16,7 +16,7 @@ const jsonLd = [
 		'@type': 'ProfessionalService',
 		'@id': `${SITE}/#service`,
 		name: 'Gursimran Singh — Web Developer',
-		description: 'Full stack web development, SEO-ready business websites, AI-powered features and cloud cost optimisation.',
+		description: 'Scalable business websites and web apps, e-commerce and Shopify websites, AI-powered features, SEO, and cloud hosting and deployments.',
 		url: SITE,
 		image: `${SITE}/og.png`,
 		telephone: '+918950848075',
@@ -27,7 +27,7 @@ const jsonLd = [
 			{ '@type': 'City', name: 'Chandigarh' },
 		],
 		address: { '@type': 'PostalAddress', addressLocality: 'Chandigarh', addressCountry: 'IN' },
-		knowsAbout: ['Web development', 'Full stack development', 'React', 'Next.js', 'SEO'],
+		knowsAbout: ['Web development', 'Full stack development', 'E-commerce', 'Shopify', 'React', 'Next.js', 'SEO', 'Cloud hosting'],
 	},
 	{
 		'@context': 'https://schema.org',

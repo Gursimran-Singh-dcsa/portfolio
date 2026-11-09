@@ -206,16 +206,18 @@ export const seo = {
 		'Next.js developer India',
 		'senior software engineer Chandigarh',
 		'hire full stack developer',
+		'ecommerce website developer',
+		'Shopify developer',
 		'Trantor software engineer',
 	],
 };
 
 export const services = [
-	{ title: 'Business websites & web apps', text: 'Fast, SEO-ready websites and web applications in React, Next.js and Astro, like the sites I built for Move Mate Relocations, PNG Software and Trantor.' },
-	{ title: 'Full stack development', text: 'End-to-end products with Node.js, Express, PHP Symfony, MySQL and MongoDB, from the API and database to the interface and deployment.' },
+	{ title: 'Scalable business websites & web apps', text: 'Fast, scalable, SEO-ready websites and web applications in React, Next.js and Astro, like the sites I built for Move Mate Relocations, PNG Software and Trantor.' },
+	{ title: 'E-commerce / Shopify websites', text: 'Online stores and e-commerce websites, including Shopify, built to be fast, easy to manage and ready to sell, from product pages and checkout to launch.' },
 	{ title: 'AI-powered features', text: 'OpenAI, RAG, vector search and function calling, as in SourceSmart and my AI task assistant: practical AI inside real products.' },
 	{ title: 'SEO & performance', text: 'Technical SEO, structured data and content structure that helps a business show up in search. One case study reached page 1 for a very competitive local keyword.' },
-	{ title: 'Cloud & Kubernetes cost review', text: 'Auditing AWS and EKS setups to cut waste: for one customer, fewer load balancers and standard Kubernetes support cut the bill by about two-thirds.' },
+	{ title: 'Cloud hosting & deployments', text: 'Setting up cloud hosting and deployments on AWS, Docker and Kubernetes with CI/CD, and reviewing setups to cut waste: for one customer, fewer load balancers and standard Kubernetes support cut the bill by about two-thirds.' },
 ];
 
 export const waLink = (text = '') => `https://wa.me/${WHATSAPP_NUMBER}${text ? `?text=${encodeURIComponent(text)}` : ''}`;
