@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel>
+<title>Gursimran Singh — Blog</title>
+<link>https://gursimran.in/#blog</link>
+<description>Posts by Gursimran Singh on web development, SEO, Claude Code, AWS and Kubernetes.</description>
+<language>en-in</language>
+<item>
+<title>How I Built GadgetSimplify with Claude Code in 2 Hours</title>
+<link>https://gursimran.in/blog/building-gadgetsimplify-with-claude-code/</link>
+<guid isPermaLink="true">https://gursimran.in/blog/building-gadgetsimplify-with-claude-code/</guid>
+<pubDate>Tue, 10 Nov 2026 00:00:00 GMT</pubDate>
+<description>Why I built GadgetSimplify, a gadget explainer site with a buying verdict on every review, and how Claude Code helped me ship it in under two hours.</description>
+<enclosure url="https://gursimran.in/blog/covers/building-gadgetsimplify-with-claude-code.png" type="image/png" length="50562" />
+<category>Claude Code</category><category>gadget buying guide</category><category>Next.js</category><category>Cloudflare</category><category>side project</category>
+</item>
+<item>
+<title>SEO Case Study: Hamilton Furniture Movers on Page 1</title>
+<link>https://gursimran.in/blog/hamilton-furniture-movers-seo-case-study/</link>
+<guid isPermaLink="true">https://gursimran.in/blog/hamilton-furniture-movers-seo-case-study/</guid>
+<pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
+<description>How we got Move Mate Relocations onto page 1 for &quot;hamilton furniture movers&quot;, a generic keyword that was also a website name, with a new blog and social posts.</description>
+<enclosure url="https://gursimran.in/blog/covers/hamilton-furniture-movers-seo-case-study.png" type="image/png" length="47968" />
+<category>SEO</category><category>local SEO</category><category>case study</category><category>content marketing</category><category>Next.js</category>
+</item>
+<item>
+<title>How We Cut a Customer's AWS Bill from $2,400 to $800/Month</title>
+<link>https://gursimran.in/blog/reduce-aws-kubernetes-cost-2400-to-800/</link>
+<guid isPermaLink="true">https://gursimran.in/blog/reduce-aws-kubernetes-cost-2400-to-800/</guid>
+<pubDate>Tue, 01 Sep 2026 00:00:00 GMT</pubDate>
+<description>A customer's AWS bill was USD 2,400 a month. We merged 13 load balancers into one, ended EKS extended support and cut it to about USD 800 a month.</description>
+<enclosure url="https://gursimran.in/blog/covers/reduce-aws-kubernetes-cost-2400-to-800.png" type="image/png" length="58339" />
+<category>AWS</category><category>Kubernetes</category><category>EKS</category><category>cost optimization</category><category>DevOps</category>
+</item>
+<item>
+<title>AdSense Rejected My Site: Thin Content &amp; E-E-A-T Lessons</title>
+<link>https://gursimran.in/blog/google-adsense-rejected-thin-content-eeat-lessons/</link>
+<guid isPermaLink="true">https://gursimran.in/blog/google-adsense-rejected-thin-content-eeat-lessons/</guid>
+<pubDate>Wed, 01 Apr 2026 00:00:00 GMT</pubDate>
+<description>Google AdSense rejected my site Pharmacist Notes for thin content. Here is what I found about E-E-A-T, indexing, AI content and sources, and how I'm fixing it.</description>
+<enclosure url="https://gursimran.in/blog/covers/google-adsense-rejected-thin-content-eeat-lessons.png" type="image/png" length="48537" />
+<category>Google AdSense</category><category>E-E-A-T</category><category>thin content</category><category>SEO</category><category>blogging</category>
+</item>
+</channel></rss>
