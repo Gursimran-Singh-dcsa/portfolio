@@ -43,7 +43,7 @@ export const Icon = ({ name, className = 'h-5 w-5', mono = false }: { name: stri
 
 /** Brand glyph on a white tile so every logo keeps its official colours on navy or light backgrounds. */
 export const SocialIcon = ({ name }: { name: string }) => (
-	<span className="grid h-10 w-10 place-items-center rounded-full bg-white shadow-sm transition group-hover:-translate-y-1 group-hover:shadow-lg">
+	<span className="grid h-11 w-11 place-items-center rounded-full bg-white shadow-sm transition group-hover:-translate-y-1 group-hover:shadow-lg">
 		<Icon name={name} className="h-5 w-5" />
 	</span>
 );

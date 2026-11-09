@@ -30,3 +30,23 @@ body { @apply bg-soft text-slate-600 font-sans antialiased; }
 
 /* Tailwind v4 resets buttons to the default cursor: restore the pointer for anything clickable */
 button:not(:disabled), [role="button"], summary { cursor: pointer; }
+
+/* Blog tables: scroll sideways if wide, and become stacked cards on phones */
+.prose .table-scroll { overflow-x: auto; }
+.prose picture { display: block; }
+@media (max-width: 639px) {
+	.prose .table-scroll { overflow: visible; }
+	.prose table, .prose tbody, .prose tr, .prose td { display: block; width: 100%; }
+	.prose thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+	.prose tbody tr {
+		margin-bottom: 0.75rem;
+		padding: 0.75rem 1rem;
+		border: 1px solid #e2e8f0;
+		border-radius: 1rem;
+		background: #fff;
+		box-shadow: 0 1px 2px rgb(15 23 42 / 0.05);
+	}
+	.prose td { display: flex; justify-content: space-between; gap: 1rem; padding: 0.35rem 0; border: 0; text-align: right; font-size: 0.95rem; }
+	.prose td:first-child { display: block; padding-bottom: 0.5rem; margin-bottom: 0.25rem; border-bottom: 1px solid #eef2f7; text-align: left; font-weight: 700; color: var(--color-navy); }
+	.prose td[data-label]::before { content: attr(data-label); flex: none; max-width: 45%; text-align: left; font-weight: 500; color: #64748b; }
+}

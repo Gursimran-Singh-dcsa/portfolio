@@ -86,6 +86,71 @@ def eeat():
     im.save("public/blog/images/eeat.png", optimize=True)
 
 
+def aws_mobile():
+    """Stacked, larger-text variant for phones."""
+    W, H = 800, 1000
+    im = Image.new("RGB", (W, H), SOFT)
+    d = ImageDraw.Draw(im)
+    d.rounded_rectangle((30, 30, 770, 480), 28, fill="white", outline=(203, 213, 225), width=2)
+    d.rounded_rectangle((30, 520, 770, 970), 28, fill=NAVY)
+    center(d, (30, 50, 770, 100), "BEFORE", font(34), (100, 116, 139))
+    for i, (cx, n) in enumerate([(60, 7), (420, 6)]):
+        d.rounded_rectangle((cx, 115, cx + 320, 300), 16, outline=(148, 163, 184), width=3)
+        d.text((cx + 14, 122), f"EKS cluster {i + 1}", font=font(22), fill=NAVY)
+        for k in range(n):
+            x, y = cx + 16 + (k % 4) * 76, 160 + (k // 4) * 66
+            d.rounded_rectangle((x, y, x + 64, y + 54), 8, fill=(239, 68, 68))
+            center(d, (x, y, x + 64, y + 54), "ELB", font(20), "white")
+    center(d, (30, 320, 770, 370), "13 load balancers", font(44), NAVY)
+    center(d, (30, 372, 770, 415), "Extended support", font(32, False), (239, 68, 68))
+    center(d, (30, 420, 770, 470), "~USD 2,400 / month", font(42), NAVY)
+    d.polygon([(370, 485), (430, 485), (400, 515)], fill=PRIMARY)
+    center(d, (30, 540, 770, 590), "AFTER", font(34), SKY)
+    d.rounded_rectangle((220, 605, 580, 780), 16, outline=SKY, width=3)
+    d.text((234, 612), "EKS cluster", font=font(22), fill="white")
+    d.rounded_rectangle((330, 640, 470, 690), 10, fill=(34, 197, 94))
+    center(d, (330, 640, 470, 690), "1 ELB", font(24), "white")
+    for k in range(6):
+        x, y = 234 + (k % 3) * 116, 702 + (k // 3) * 36
+        d.rounded_rectangle((x, y, x + 106, y + 30), 6, fill=PRIMARY)
+        center(d, (x, y, x + 106, y + 30), "backend" if k < 5 else "frontend", font(15), "white")
+    center(d, (30, 805, 770, 855), "1 load balancer", font(44), "white")
+    center(d, (30, 857, 770, 900), "Standard support", font(32, False), (134, 239, 172))
+    center(d, (30, 905, 770, 955), "~USD 800 / month", font(42), "white")
+    im.save("public/blog/images/aws-before-after-mobile.png", optimize=True)
+
+
+def eeat_mobile():
+    """2x2 grid with larger text for phones."""
+    W, H = 800, 780
+    im = Image.new("RGB", (W, H), SOFT)
+    d = ImageDraw.Draw(im)
+    items = [("E", "Experience", "First-hand, real-world use of the topic"), ("E", "Expertise", "Knowledge and qualifications to write it"),
+             ("A", "Authoritativeness", "Recognised as a go-to source"), ("T", "Trustworthiness", "Accurate, sourced and transparent")]
+    for i, (letter, name, desc) in enumerate(items):
+        x, y = 30 + (i % 2) * 385, 30 + (i // 2) * 340
+        d.rounded_rectangle((x, y, x + 355, y + 310), 28, fill=NAVY if i == 3 else "white", outline=(203, 213, 225), width=2)
+        d.ellipse((x + 132, y + 22, x + 222, y + 112), fill=PRIMARY)
+        center(d, (x + 132, y + 22, x + 222, y + 112), letter, font(56), "white")
+        dark = i == 3
+        center(d, (x, y + 125, x + 355, y + 170), name, font(32), "white" if dark else NAVY)
+        words, lines, cur = desc.split(), [], ""
+        for w in words:
+            t = f"{cur} {w}".strip()
+            if d.textlength(t, font=font(25, False)) <= 315:
+                cur = t
+            else:
+                lines.append(cur)
+                cur = w
+        lines.append(cur)
+        for j, ln in enumerate(lines):
+            center(d, (x, y + 185 + j * 34, x + 355, y + 219 + j * 34), ln, font(25, False), (203, 213, 225) if dark else (71, 85, 105))
+    center(d, (0, 715, W, 760), "Trust is the most important of the four", font(26, False), (71, 85, 105))
+    im.save("public/blog/images/eeat-mobile.png", optimize=True)
+
+
 aws()
 eeat()
+aws_mobile()
+eeat_mobile()
 print("ok")

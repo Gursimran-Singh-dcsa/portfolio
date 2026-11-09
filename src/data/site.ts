@@ -4,7 +4,7 @@ export const PHONE_DISPLAY = '+91 89508 48075';
 export const profile = {
 	name: 'Gursimran Singh',
 	role: 'Full Stack Developer',
-	tagline: 'Senior Software Engineer with 7+ years building scalable web applications — from pixel-perfect interfaces to resilient APIs and AI-powered products.',
+	tagline: '7+ years building scalable web applications, from pixel-perfect interfaces to resilient APIs and AI-powered products.',
 	location: 'Chandigarh, India',
 	company: 'Trantor Software',
 	resume: '/Resume.pdf',
@@ -29,7 +29,7 @@ export const career: Role[] = [
 ];
 
 export const education: { degree: string; school?: string; year?: string }[] = [
-	{ degree: 'Diploma in Pharmacy (D.Pharm)' },
+	{ degree: 'Diploma in Pharmacy (D.Pharm)', school: 'P.S.B.T.E', year: '2026' },
 	{ degree: 'MCA', school: 'Panjab University, Chandigarh', year: '2019' },
 	{ degree: 'B.Sc Computer Science', school: 'Kurukshetra University', year: '2016' },
 ];

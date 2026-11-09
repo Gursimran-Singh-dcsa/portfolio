@@ -4,8 +4,12 @@ import { useState, type FormEvent } from 'react';
 import { PHONE_DISPLAY, WHATSAPP_NUMBER, profile, socials, waLink } from '../data/site';
 import { Icon, SocialIcon } from './Icons';
 import { Reveal, SectionHead } from './Reveal';
+import { Button } from './ui/Button';
+import { Card } from './ui/Card';
+import { Section } from './ui/Section';
 
-const field = 'w-full rounded-xl border border-white/15 bg-navy/60 px-4 py-3 text-white placeholder:text-slate-500 outline-none transition focus:border-sky';
+// text-base (16px) stops iOS Safari from zooming the page when a field is focused
+const field = 'w-full min-h-12 rounded-xl border border-white/15 bg-navy/60 px-4 py-3 text-base text-white placeholder:text-slate-500 outline-none transition focus:border-sky';
 
 export const Contact = () => {
 	const [name, setName] = useState('');
@@ -15,45 +19,43 @@ export const Contact = () => {
 		window.open(waLink(`Hi Gursimran, I'm ${name}.\n\n${msg}`), '_blank', 'noopener');
 	};
 	return (
-		<section className="bg-navy">
-		<div className="mx-auto max-w-5xl px-5 py-24">
+		<Section dark size="lg">
 			<SectionHead dark id="contact" kicker="Contact" title="Let's build something great" />
 			<Reveal>
-				<div className="grid gap-10 rounded-3xl border border-white/10 bg-white/5 p-8 md:grid-cols-2 md:p-12">
+				<Card tone="glass" padding="lg" className="grid gap-8 md:grid-cols-2 md:gap-10">
 					<div>
 						<p className="leading-relaxed text-slate-300">Send me a message and it lands straight in my WhatsApp, or call or email me. I usually reply within a few hours.</p>
-						<a href={`tel:+${WHATSAPP_NUMBER}`} className="mt-6 flex items-center gap-2 text-white hover:text-sky">
-							<Icon name="phone" className="h-5 w-5 text-sky" /> {PHONE_DISPLAY}
+						<a href={`tel:+${WHATSAPP_NUMBER}`} className="mt-4 flex min-h-11 items-center gap-3 text-white hover:text-sky">
+							<Icon name="phone" className="h-5 w-5 shrink-0 text-sky" /> {PHONE_DISPLAY}
 						</a>
-						<a href={`mailto:${profile.email}`} className="mt-3 flex items-center gap-2 text-white hover:text-sky">
-							<Icon name="mail" className="h-5 w-5 text-sky" /> {profile.email}
+						<a href={`mailto:${profile.email}`} className="flex min-h-11 items-center gap-3 break-all text-white hover:text-sky">
+							<Icon name="mail" className="h-5 w-5 shrink-0 text-sky" /> {profile.email}
 						</a>
-						<div className="mt-8 flex gap-3">
+						<div className="mt-5 flex gap-3">
 							{socials.map((s) => (
 								<a key={s.name} href={s.href} target="_blank" rel="noreferrer" aria-label={s.name} className="group"><SocialIcon name={s.icon} /></a>
 							))}
 						</div>
 					</div>
 					<form onSubmit={submit} className="space-y-4">
-						<input required value={name} onChange={(e) => setName(e.target.value)} placeholder="Your name" className={field} />
+						<input required value={name} onChange={(e) => setName(e.target.value)} placeholder="Your name" autoComplete="name" className={field} />
 						<textarea required rows={4} value={msg} onChange={(e) => setMsg(e.target.value)} placeholder="How can I help?" className={field} />
-						<button className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-500 px-6 py-3 font-medium text-white transition hover:bg-emerald-400">
+						<Button type="submit" variant="whatsapp" className="w-full">
 							<Icon name="whatsapp" mono /> Send on WhatsApp
-						</button>
+						</Button>
 					</form>
-				</div>
+				</Card>
 			</Reveal>
-		</div>
-		</section>
+		</Section>
 	);
 };
 
 export const WhatsAppFab = () => (
-	<a href={waLink("Hi Gursimran, I'd like to connect.")} target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp" className="fixed bottom-5 right-5 z-50 rounded-full bg-emerald-500 p-4 text-white shadow-xl shadow-emerald-500/30 transition hover:scale-110">
+	<a href={waLink("Hi Gursimran, I'd like to connect.")} target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp" className="fixed bottom-[max(1rem,env(safe-area-inset-bottom))] right-4 z-50 rounded-full bg-emerald-500 p-3.5 text-white shadow-xl shadow-emerald-500/30 transition hover:scale-110 sm:bottom-5 sm:right-5 sm:p-4">
 		<Icon name="whatsapp" mono className="h-6 w-6" />
 	</a>
 );
 
 export const Footer = () => (
-	<footer className="border-t border-white/10 bg-navy py-8 text-center text-sm text-slate-400">© {new Date().getFullYear()} Gursimran Singh</footer>
+	<footer className="border-t border-white/10 bg-navy px-5 pt-8 pb-24 text-center text-sm text-slate-400 sm:pb-8">© {new Date().getFullYear()} Gursimran Singh</footer>
 );

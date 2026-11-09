@@ -1,5 +1,8 @@
 import { career, education } from '../data/site';
 import { Reveal, SectionHead } from './Reveal';
+import { Card } from './ui/Card';
+import { Chip } from './ui/Chip';
+import { Section } from './ui/Section';
 
 const AXIS_START = 2018;
 const AXIS_END = 2027; // exclusive: axis covers Jan 2018 → Dec 2026
@@ -22,10 +25,10 @@ const years = Array.from({ length: AXIS_END - AXIS_START }, (_, i) => AXIS_START
 export const Journey = () => {
 	const now = nowYm();
 	return (
-		<section className="mx-auto max-w-5xl px-5 py-24">
+		<Section size="lg">
 			<SectionHead id="journey" kicker="Experience" title="Career path" />
 			<Reveal>
-				<div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+				<Card padding="lg">
 					<div className="relative">
 						{/* year grid */}
 						<div aria-hidden className="pointer-events-none absolute inset-0">
@@ -64,7 +67,7 @@ export const Journey = () => {
 					<div className="mt-8 flex flex-wrap gap-3 border-t border-slate-100 pt-6">
 						{education.map((e) => (
 							<div key={e.degree} className="flex items-center gap-3 rounded-2xl bg-soft px-4 py-3">
-								{e.year && <span className="rounded-full bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary">{e.year}</span>}
+								{e.year && <Chip>{e.year}</Chip>}
 								<div>
 									<p className="text-sm font-bold text-navy">{e.degree}</p>
 									{e.school && <p className="text-xs text-slate-500">{e.school}</p>}
@@ -72,8 +75,8 @@ export const Journey = () => {
 							</div>
 						))}
 					</div>
-				</div>
+				</Card>
 			</Reveal>
-		</section>
+		</Section>
 	);
 };

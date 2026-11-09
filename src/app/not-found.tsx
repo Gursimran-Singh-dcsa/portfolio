@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import { Icon } from '../components/Icons';
+import { Button } from '../components/ui/Button';
+import { Chip } from '../components/ui/Chip';
 import { waLink } from '../data/site';
 
 const quick = [
@@ -12,7 +14,7 @@ const quick = [
 
 export default function NotFound() {
 	return (
-		<main className="relative flex min-h-screen items-center overflow-hidden bg-navy px-5 pt-24 pb-16">
+		<main className="relative flex min-h-[100svh] items-center overflow-hidden bg-navy px-5 pt-24 pb-16">
 			<div aria-hidden className="pointer-events-none absolute inset-0">
 				<div className="absolute -top-32 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-primary/40 blur-[140px]" />
 				<div className="absolute bottom-0 right-0 h-[360px] w-[360px] rounded-full bg-sky/15 blur-[120px]" />
@@ -24,20 +26,20 @@ export default function NotFound() {
 				<p className="mx-auto mt-5 max-w-lg text-lg leading-relaxed text-slate-300">
 					The page you're looking for doesn't exist or has moved. Let's get you back to something worth reading.
 				</p>
-				<div className="mt-9 flex flex-wrap justify-center gap-3">
-					<Link href="/" className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 font-medium text-white shadow-lg shadow-primary/40 transition hover:bg-blue-600">
+				<div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
+					<Button href="/">
 						Back to home <Icon name="arrow" className="h-4 w-4 transition group-hover:translate-x-1" />
-					</Link>
-					<a href={waLink('Hi Gursimran, I found a broken link on your website.')} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 font-medium text-white transition hover:bg-white/5">
+					</Button>
+					<Button href={waLink('Hi Gursimran, I found a broken link on your website.')} external variant="outline">
 						<Icon name="whatsapp" className="h-4 w-4" /> Report a broken link
-					</a>
+					</Button>
 				</div>
 				<nav aria-label="Popular pages" className="mt-12 border-t border-white/10 pt-8">
 					<p className="text-xs font-medium uppercase tracking-[0.25em] text-sky">Or jump to</p>
 					<ul className="mt-4 flex flex-wrap justify-center gap-2">
 						{quick.map(([label, href]) => (
 							<li key={label}>
-								<Link href={href} className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200 transition hover:border-sky hover:text-white">{label}</Link>
+								<Link href={href}><Chip variant="glass">{label}</Chip></Link>
 							</li>
 						))}
 					</ul>

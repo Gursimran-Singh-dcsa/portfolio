@@ -118,7 +118,10 @@ We didn't switch things off until the new setup was proven. Once everything was 
 
 ## The result
 
-![Diagram comparing the old setup of 2 EKS clusters and 13 load balancers at about USD 2,400 a month with the new setup of 1 cluster and 1 load balancer at about USD 800 a month](/blog/images/aws-before-after.png)
+<picture>
+<source media="(max-width: 639px)" srcset="/blog/images/aws-before-after-mobile.png">
+<img src="/blog/images/aws-before-after.png" alt="Diagram comparing the old setup of 2 EKS clusters and 13 load balancers at about USD 2,400 a month with the new setup of 1 cluster and 1 load balancer at about USD 800 a month" width="1200" height="640">
+</picture>
 
 | | Before | After |
 | --- | --- | --- |

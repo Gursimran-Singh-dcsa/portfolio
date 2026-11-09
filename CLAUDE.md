@@ -10,6 +10,12 @@ Personal portfolio at https://gursimran.in (GitHub Pages, custom domain).
 - SEO: metadata + JSON-LD in `src/app/layout.tsx`, `sitemap.ts`, `robots.ts`.
 - Components are server components unless they need state/effects (`'use client'`: Nav, Reveal, Contact, RegisterSW).
 
+## Reusable UI components (use these, don't repeat class strings)
+`src/components/ui/`: `Section` (max-width, side gutter, mobile-first `py-16 sm:py-24`; `dark` for navy), `Card` (`tone` light/glass/dark, `padding`, `interactive`), `Chip` (tags, badges, pills), `Button` (link or button; `primary`/`outline`/`ghost`/`whatsapp`/`link`; 44-48px touch height and pointer cursor built in). Shared elsewhere: `SectionHead`/`Reveal` (`Reveal.tsx`), `Icon`/`SocialIcon` (`Icons.tsx`), `Projects` (used for both products and projects), `BlogRow`. Markdown rendering lives in `src/lib/markdown.ts` (lazy images, mobile-friendly tables).
+
+## Mobile-first rules
+Design for 375px first, then add `sm:`/`md:`/`lg:`. Check 320px, 375px, 768px and desktop; there must be no horizontal scroll. Tap targets are at least 44px. Inputs use `text-base` (stops iOS zoom). The hero photo is hidden on phones. In blog posts, wide images get a phone variant via `<picture>` (`scripts/make-diagrams.py`); tables become stacked cards on phones automatically.
+
 ## Content lives in data, not JSX
 - `src/data/site.ts` — profile, socials, experience, skills, **projects**, `WHATSAPP_NUMBER`.
 - `src/data/blogs.ts` — loads blog markdown.

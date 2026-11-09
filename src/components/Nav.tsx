@@ -31,12 +31,12 @@ export const Nav = () => {
 						<a href="/Resume.pdf" target="_blank" rel="noreferrer" className="rounded-full border border-white/15 px-4 py-1.5 text-white transition hover:border-sky hover:bg-primary/30">Resume</a>
 					</li>
 				</ul>
-				<button aria-label="Menu" className="md:hidden text-white" onClick={() => setOpen(!open)}>
+				<button aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} className="-mr-2 grid h-11 w-11 place-items-center text-white md:hidden" onClick={() => setOpen(!open)}>
 					<Icon name={open ? 'close' : 'menu'} className="h-6 w-6" />
 				</button>
 			</nav>
 			{open && (
-				<ul className="flex flex-col gap-1 px-5 pb-5 md:hidden">
+				<ul className="flex max-h-[calc(100dvh-4rem)] flex-col gap-1 overflow-y-auto px-5 pb-5 md:hidden">
 					{links.map(([n, h]) => (
 						<li key={n}><a onClick={() => setOpen(false)} href={href(h)} className="block rounded-lg px-3 py-3 text-lg text-white hover:bg-white/5">{n}</a></li>
 					))}

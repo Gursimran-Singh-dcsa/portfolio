@@ -41,7 +41,10 @@ This was the biggest eye-opener, and it's the part most beginners have never hea
 
 E-E-A-T is not a single score or a switch. It's a way of judging whether content is reliable, and it matters most for topics where bad information can hurt people. Google calls these "Your Money or Your Life" topics, and **health and medicine are exactly that**.
 
-![The four parts of E-E-A-T: Experience, Expertise, Authoritativeness and Trustworthiness](/blog/images/eeat.png) A medicine website is held to a much higher standard than, say, a recipe blog.
+<picture>
+<source media="(max-width: 639px)" srcset="/blog/images/eeat-mobile.png">
+<img src="/blog/images/eeat.png" alt="The four parts of E-E-A-T: Experience, Expertise, Authoritativeness and Trustworthiness" width="1200" height="440">
+</picture> A medicine website is held to a much higher standard than, say, a recipe blog.
 
 I have a D.Pharm diploma, but a visitor can't see that unless the site shows it clearly. On my site, the signals of experience, expertise and trust weren't strong enough.
 
