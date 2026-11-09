@@ -18,7 +18,7 @@ export const Services = () => (
 				</Reveal>
 			))}
 		</div>
-		<Reveal className="mt-10">
+		<Reveal className="mt-10 flex justify-end">
 			<a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 font-medium text-white shadow-lg shadow-primary/30 transition hover:bg-blue-600">Start a project</a>
 		</Reveal>
 	</section>
