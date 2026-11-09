@@ -18,7 +18,7 @@ export const Reveal = ({ children, className = '', delay = 0 }: { children: Reac
 
 export const SectionHead = ({ id, kicker, title, dark = false }: { id: string; kicker: string; title: string; dark?: boolean }) => (
 	<Reveal className="mb-12">
-		<p id={id} className={`scroll-mt-28 font-display text-sm font-medium uppercase tracking-[0.25em] ${dark ? 'text-sky' : 'text-primary'}`}>{kicker}</p>
+		<p id={id} className={`scroll-mt-24 font-display text-sm font-medium uppercase tracking-[0.25em] ${dark ? 'text-sky' : 'text-primary'}`}>{kicker}</p>
 		<h2 className={`mt-3 font-display text-3xl font-bold sm:text-5xl ${dark ? 'text-white' : 'text-navy'}`}>{title}</h2>
 	</Reveal>
 );

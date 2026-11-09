@@ -52,7 +52,7 @@ export const BlogPost = ({ post }: { post: Post }) => {
 		},
 	];
 	return (
-		<main className="mx-auto max-w-3xl px-5 pt-40 pb-24">
+		<main className="mx-auto max-w-3xl px-5 pt-32 pb-24">
 			<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 			<nav aria-label="Breadcrumb" className="text-sm text-slate-500">
 				<Link href="/" className="hover:text-primary">Home</Link> / <Link href="/#blog" className="hover:text-primary">Blog</Link>

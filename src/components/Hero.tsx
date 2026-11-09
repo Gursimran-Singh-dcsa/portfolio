@@ -3,7 +3,7 @@ import { Icon, SocialIcon } from './Icons';
 import { Reveal } from './Reveal';
 
 export const Hero = () => (
-	<section id="top" className="relative overflow-hidden bg-navy pt-40 pb-24 sm:pt-52">
+	<section id="top" className="relative overflow-hidden bg-navy pt-32 pb-24 sm:pt-44">
 		<div aria-hidden className="pointer-events-none absolute inset-0">
 			<div className="absolute -top-32 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-primary/50 blur-[140px]" />
 			<div className="absolute top-40 right-0 h-[360px] w-[360px] rounded-full bg-sky/15 blur-[120px]" />
@@ -59,7 +59,7 @@ export const Hero = () => (
 				</div>
 			</Reveal>
 		</div>
-		<div id="about" className="relative mx-auto mt-24 grid max-w-6xl scroll-mt-28 gap-6 px-5 md:grid-cols-[1.4fr_1fr]">
+		<div id="about" className="relative mx-auto mt-24 grid max-w-6xl scroll-mt-24 gap-6 px-5 md:grid-cols-[1.4fr_1fr]">
 			<Reveal className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
 				<h2 className="font-display text-2xl font-bold text-white">About me</h2>
 				<p className="mt-4 leading-relaxed text-slate-300">

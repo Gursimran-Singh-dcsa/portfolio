@@ -2,7 +2,6 @@
 
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { PHONE_DISPLAY, WHATSAPP_NUMBER, profile } from '../data/site';
 import { Icon } from './Icons';
 
 const links = [['About', '#about'], ['Journey', '#journey'], ['Products', '#products'], ['Work', '#work'], ['Skills', '#skills'], ['Blog', '#blog'], ['Contact', '#contact']];
@@ -20,19 +19,6 @@ export const Nav = () => {
 	const href = (h: string) => (home ? h : `/${h}`);
 	return (
 		<header className={`fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-navy/95 backdrop-blur-xl transition ${scrolled ? 'shadow-lg shadow-navy/30' : ''}`}>
-			<div className="border-b border-white/10 bg-black/25 text-xs text-slate-300">
-				<div className="mx-auto flex h-9 max-w-6xl items-center justify-between gap-4 px-5">
-					<p className="hidden sm:block">Full Stack Developer · Ambala · Chandigarh, India</p>
-					<div className="flex items-center gap-5">
-						<a href={`tel:+${WHATSAPP_NUMBER}`} className="inline-flex items-center gap-1.5 transition hover:text-white">
-							<Icon name="phone" className="h-3.5 w-3.5 text-sky" /> {PHONE_DISPLAY}
-						</a>
-						<a href={`mailto:${profile.email}`} aria-label={`Email ${profile.email}`} className="inline-flex items-center gap-1.5 transition hover:text-white">
-							<Icon name="mail" className="h-3.5 w-3.5 text-sky" /> <span className="hidden sm:inline">{profile.email}</span>
-						</a>
-					</div>
-				</div>
-			</div>
 			<nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
 				<a href={href('#top')} className="font-display text-lg font-bold text-white">
 					Gursimran Singh

@@ -12,7 +12,7 @@ const quick = [
 
 export default function NotFound() {
 	return (
-		<main className="relative flex min-h-screen items-center overflow-hidden bg-navy px-5 pt-32 pb-16">
+		<main className="relative flex min-h-screen items-center overflow-hidden bg-navy px-5 pt-24 pb-16">
 			<div aria-hidden className="pointer-events-none absolute inset-0">
 				<div className="absolute -top-32 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-primary/40 blur-[140px]" />
 				<div className="absolute bottom-0 right-0 h-[360px] w-[360px] rounded-full bg-sky/15 blur-[120px]" />
