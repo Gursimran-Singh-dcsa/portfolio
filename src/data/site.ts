@@ -192,8 +192,8 @@ export const courses: { provider: string; items: string[] }[] = [
 ];
 
 export const seo = {
-	title: 'Gursimran Singh | Full Stack Developer - Ambala, Chandigarh',
-	description: 'Gursimran Singh is a full stack developer from Ambala, working at Trantor in Chandigarh. Hire a web developer for React, Next.js and Node.js websites and apps.',
+	title: 'Gursimran Singh | Senior Full Stack & AI Engineer',
+	description: 'Senior Software Engineer with 7+ years of experience building scalable web applications, AI-powered products, React, Node.js and modern cloud solutions. Based in Ambala, India.',
 	// Target searches: the name, name + place, name + role, name + employer, and local/business intent.
 	keywords: [
 		'Gursimran Singh',
