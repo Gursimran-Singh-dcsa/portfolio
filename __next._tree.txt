@@ -3,4 +3,4 @@
 :HL["/profile.png","image",{"fetchPriority":"high"}]
 :HL["/certs/claude-architect.png","image"]
 1:[["children",{"s":"__PAGE__","h":128}]]
-0:{"b":"NOC9GHwvnuDYmKTeQxJyS","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
+0:{"b":"APKztDb1UuYWPssLtAixa","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
