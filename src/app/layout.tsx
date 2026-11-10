@@ -68,7 +68,7 @@ const jsonLd = [
 			{ '@type': 'CollegeOrUniversity', name: 'Kurukshetra University' },
 		],
 		hasCredential: { '@type': 'EducationalOccupationalCredential', name: 'Claude Certified Architect – Foundations', credentialCategory: 'certification', recognizedBy: { '@type': 'Organization', name: 'Anthropic' } },
-		knowsAbout: ['Full stack development', 'React', 'Next.js', 'Node.js', 'TypeScript', 'Astro', 'Web development', 'E-commerce', 'Shopify', 'SEO', 'AWS', 'Kubernetes', 'Generative AI', 'OpenAI', 'RAG'],
+		knowsAbout: ['Full stack development', 'React', 'React Native', 'Next.js', 'Node.js', 'NestJS', 'TypeScript', 'Astro', 'Web development', 'E-commerce', 'Shopify', 'SEO', 'AWS', 'Kubernetes', 'Generative AI', 'OpenAI', 'RAG'],
 		sameAs: ['https://github.com/Gursimran-Singh-dcsa', 'https://www.linkedin.com/in/gursimran-singh-b83a3b126', 'https://www.instagram.com/gursimran__singh_/', 'https://pharmacistnotes.com', 'https://gadgetsimplify.in'],
 	},
 ];

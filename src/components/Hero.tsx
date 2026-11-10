@@ -24,7 +24,7 @@ export const Hero = () => (
 							fetchPriority="high"
 							width={512}
 							height={512}
-							className="h-72 w-72 object-contain object-bottom lg:h-96 lg:w-96"
+							className="h-72 w-72 object-contain object-bottom [mask-image:linear-gradient(to_bottom,#000_62%,transparent_97%)] lg:h-96 lg:w-96"
 						/>
 					</div>
 				</div>

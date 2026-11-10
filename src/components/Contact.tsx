@@ -17,6 +17,9 @@ export const Contact = () => {
 	const submit = (e: FormEvent) => {
 		e.preventDefault();
 		window.open(waLink(`Hi Gursimran, I'm ${name}.\n\n${msg}`), '_blank', 'noopener');
+		// Clear the form once the message has been handed off to WhatsApp
+		setName('');
+		setMsg('');
 	};
 	return (
 		<Section dark size="lg">

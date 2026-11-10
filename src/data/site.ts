@@ -35,8 +35,8 @@ export const education: { degree: string; school?: string; year?: string }[] = [
 ];
 
 export const skills: Record<string, string[]> = {
-	Frontend: ['React', 'Next.js', 'Astro', 'TypeScript', 'Tailwind CSS', 'Redux Toolkit Query', 'GraphQL', 'MUI', 'Ant Design', 'i18n', 'Accessibility (WCAG)'],
-	Backend: ['Node.js', 'Express', 'PHP', 'Symfony', 'Doctrine ORM', 'MySQL', 'MongoDB', 'WebSockets', 'OAuth 2.0 / JWT'],
+	Frontend: ['React', 'React Native', 'Next.js', 'Astro', 'TypeScript', 'Tailwind CSS', 'Redux Toolkit Query', 'GraphQL', 'MUI', 'Ant Design', 'i18n', 'Accessibility (WCAG)'],
+	Backend: ['Node.js', 'NestJS', 'Express', 'PHP', 'Symfony', 'Doctrine ORM', 'MySQL', 'MongoDB', 'WebSockets', 'OAuth 2.0 / JWT'],
 	'AI & LLMs': ['OpenAI APIs', 'Function calling', 'RAG', 'Vector search', 'Hugging Face', 'Structured outputs'],
 	'Testing & DevOps': ['Jest', 'React Testing Library', 'Playwright', 'Docker', 'Kubernetes', 'GitLab CI', 'AWS (EC2, S3, CodePipeline)', 'SonarQube', 'Varnish', 'Nginx'],
 };
