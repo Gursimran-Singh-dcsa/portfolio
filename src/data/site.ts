@@ -102,7 +102,7 @@ export const projects: Project[] = [
 	},
 	{
 		slug: 'sourcesmart',
-		title: 'SourceSmart',
+		title: 'Source Smart with AI',
 		summary: 'An AI-powered recruitment tool where HR teams upload job descriptions and resumes and let an agentic AI shortlist the best candidates. Features bulk and PDF/DOCX uploads, resubmitting updated resumes, role-based access, FSR interview-question generation and full CRUD for projects and JDs.',
 		role: 'Senior Software Engineer',
 		tech: ['React', 'TypeScript', 'Ant Design', 'Express', 'OAuth 2.0', 'Agentic AI'],
@@ -135,6 +135,8 @@ export const projects: Project[] = [
 		summary: 'A natural-language task assistant built on OpenAI function calling that creates, updates, prioritises, completes and retrieves tasks, with structured outputs, date normalisation and multi-step conversation state.',
 		role: 'Full Stack Developer',
 		tech: ['Node.js', 'TypeScript', 'OpenAI', 'OAuth 2.0'],
+		desktop: '/projects/ai-todo-desktop.jpg',
+		mobile: '/projects/ai-todo-mobile.jpg',
 	},
 	{
 		slug: 'cdt',
@@ -142,6 +144,8 @@ export const projects: Project[] = [
 		summary: 'An enterprise admin application for VMware with caching, efficient rendering for large datasets, reusable components and a unit-tested codebase, deployed on Docker/Kubernetes.',
 		role: 'Senior Software Engineer',
 		tech: ['React', 'React Router', 'Jest', 'Enzyme', 'Docker', 'Kubernetes'],
+		desktop: '/projects/cdt-desktop.jpg',
+		mobile: '/projects/cdt-mobile.jpg',
 	},
 	{
 		slug: 'movemate',
@@ -216,7 +220,7 @@ export const seo = {
 export const services = [
 	{ title: 'Scalable business websites & web apps', text: 'Fast, scalable, SEO-ready websites and web applications in React, Next.js and Astro, like the sites I built for Move Mate Relocations, PNG Software and Trantor.' },
 	{ title: 'E-commerce / Shopify websites', text: 'Online stores and e-commerce websites, including Shopify, built to be fast, easy to manage and ready to sell, from product pages and checkout to launch.' },
-	{ title: 'AI-powered features', text: 'OpenAI, RAG, vector search and function calling, as in SourceSmart and my AI task assistant: practical AI inside real products.' },
+	{ title: 'AI-powered features', text: 'OpenAI, RAG, vector search and function calling, as in Source Smart with AI and my AI task assistant: practical AI inside real products.' },
 	{ title: 'SEO & performance', text: 'Technical SEO, structured data and content structure that helps a business show up in search. One case study reached page 1 for a very competitive local keyword.' },
 	{ title: 'Digital marketing services', text: 'Social media posts, blogging and search-friendly content that put a business in front of local customers, like the work that took Move Mate Relocations to page 1 for a very competitive keyword.' },
 	{ title: 'Cloud hosting & deployments', text: 'Setting up cloud hosting and deployments on AWS, Docker and Kubernetes with CI/CD, and reviewing setups to cut waste: for one customer, fewer load balancers and standard Kubernetes support cut the bill by about two-thirds.' },
