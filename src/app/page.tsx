@@ -45,7 +45,7 @@ export default function Home() {
 			<Services />
 			<Journey />
 			<Projects id="products" kicker="My products" title="Products I run" items={products} />
-			<Projects />
+			<Projects filterable />
 			<Skills />
 			<Learning />
 			<BlogSection />

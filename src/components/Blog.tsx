@@ -1,9 +1,13 @@
 import Link from 'next/link';
 import { BlogRow } from './BlogRow';
+import { Contact } from './Contact';
 import { getPosts, type Post } from '../data/blogs';
 import { renderMarkdown } from '../lib/markdown';
 import { Reveal, SectionHead } from './Reveal';
 import { Section } from './ui/Section';
+
+/** How many of the newest posts the home page row shows before the "Show more" card. */
+const LATEST = 5;
 
 const fmt = (d: string) => (d ? new Date(d).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }) : '');
 
@@ -11,12 +15,12 @@ export const BlogSection = () => {
 	const posts = getPosts();
 	return (
 		<Section>
-			<SectionHead id="blog" kicker="Writing" title="From the blog" />
+			<SectionHead id="blog" kicker="Writing" title="Latest from the blog" />
 			{posts.length === 0 ? (
 				<p className="text-slate-500">Posts are on the way. Check back soon.</p>
 			) : (
 				<Reveal>
-					<BlogRow posts={posts.map(({ slug, title, date, summary, cover, coverAlt, readingMinutes }) => ({ slug, title, date, summary, cover, coverAlt, readingMinutes }))} />
+					<BlogRow total={posts.length} posts={posts.slice(0, LATEST).map(({ slug, title, date, summary, cover, coverAlt, readingMinutes }) => ({ slug, title, date, summary, cover, coverAlt, readingMinutes }))} />
 				</Reveal>
 			)}
 		</Section>
@@ -47,16 +51,17 @@ export const BlogPost = ({ post }: { post: Post }) => {
 			'@type': 'BreadcrumbList',
 			itemListElement: [
 				{ '@type': 'ListItem', position: 1, name: 'Home', item: `${site}/` },
-				{ '@type': 'ListItem', position: 2, name: 'Blog', item: `${site}/#blog` },
+				{ '@type': 'ListItem', position: 2, name: 'Blog', item: `${site}/blog/` },
 				{ '@type': 'ListItem', position: 3, name: post.title, item: `${site}/blog/${post.slug}/` },
 			],
 		},
 	];
 	return (
+		<>
 		<main className="mx-auto max-w-3xl px-5 pt-28 pb-16 sm:pt-32 sm:pb-24">
 			<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 			<nav aria-label="Breadcrumb" className="text-sm text-slate-500">
-				<Link href="/" className="hover:text-primary">Home</Link> / <Link href="/#blog" className="hover:text-primary">Blog</Link>
+				<Link href="/" className="hover:text-primary">Home</Link> / <Link href="/blog/" className="hover:text-primary">Blog</Link>
 			</nav>
 			<article>
 				<header className="mt-8">
@@ -73,5 +78,7 @@ export const BlogPost = ({ post }: { post: Post }) => {
 				/>
 			</article>
 		</main>
+		<Contact />
+		</>
 	);
 };

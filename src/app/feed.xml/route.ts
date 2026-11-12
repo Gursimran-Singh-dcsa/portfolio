@@ -32,7 +32,7 @@ ${p.tags.map((t) => `<category>${esc(t)}</category>`).join('')}
 	const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0"><channel>
 <title>Gursimran Singh — Blog</title>
-<link>${SITE}/#blog</link>
+<link>${SITE}/blog/</link>
 <description>Posts by Gursimran Singh on web development, SEO, Claude Code, AWS and Kubernetes.</description>
 <language>en-in</language>
 ${items}

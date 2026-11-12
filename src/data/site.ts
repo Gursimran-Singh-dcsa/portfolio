@@ -41,8 +41,21 @@ export const skills: Record<string, string[]> = {
 	'Testing & DevOps': ['Jest', 'React Testing Library', 'Playwright', 'Docker', 'Kubernetes', 'GitLab CI', 'AWS (EC2, S3, CodePipeline)', 'SonarQube', 'Varnish', 'Nginx'],
 };
 
+/** Industry/domain a piece of work belongs to; drives the filter in the Work section. */
+export const domains = [
+	'Content & Publishing',
+	'Business & Brand Websites',
+	'Marketing & Campaigns',
+	'Logistics & Shipping',
+	'Recruitment & HR Tech',
+	'Enterprise Software',
+	'AI & Productivity',
+] as const;
+export type Domain = (typeof domains)[number];
+
 export type Project = {
 	slug: string;
+	domain: Domain;
 	title: string;
 	summary: string;
 	role: string;
@@ -57,6 +70,7 @@ export type Project = {
 export const products: Project[] = [
 	{
 		slug: 'gadgetsimplify',
+		domain: 'Content & Publishing',
 		title: 'GadgetSimplify',
 		badge: 'Vibe-coded with Claude Code',
 		summary: 'A technology publication that explains gadgets in simple language, with smartphone coverage and step-by-step buying guides so readers can make smarter buying decisions. Built end to end with Claude Code and deployed on Cloudflare with no database at all: every article and category lives in JSON files.',
@@ -68,6 +82,7 @@ export const products: Project[] = [
 	},
 	{
 		slug: 'pharmacistnotes',
+		domain: 'Content & Publishing',
 		title: 'Pharmacist Notes',
 		badge: 'Powered by WordPress',
 		summary: 'A medicine and health information blog for students and healthcare learners, grounded in pharmacology textbooks, clinical references and official drug-labelling sources. Includes a medicines guide, topic categories and a WhatsApp channel, managed and hosted on WordPress.',
@@ -82,6 +97,7 @@ export const products: Project[] = [
 export const projects: Project[] = [
 	{
 		slug: 'tevnt',
+		domain: 'Marketing & Campaigns',
 		title: 'Tevnt — FIFA World Cup Campaigns',
 		summary: 'High-traffic promotional campaign sites for major payment networks and banks, including Visa, Chase, Wells Fargo and Capital One. Handled 1.2M+ users in a one-hour window at ~120 TPS, with ~20,000 secure ticket-redemption links, Visa iframe integration, retry logic and zero Checkmarx findings.',
 		role: 'Senior Software Engineer',
@@ -92,6 +108,7 @@ export const projects: Project[] = [
 	},
 	{
 		slug: 'trantor',
+		domain: 'Business & Brand Websites',
 		title: 'Trantor — Corporate Website',
 		summary: 'The corporate website for Trantor, an enterprise technology services company: an immersive, animated experience presenting its AI modernisation, Centers of Excellence and cybersecurity services, with content managed in a headless CMS.',
 		role: 'Full Stack Developer',
@@ -102,6 +119,7 @@ export const projects: Project[] = [
 	},
 	{
 		slug: 'sourcesmart',
+		domain: 'Recruitment & HR Tech',
 		title: 'Source Smart with AI',
 		summary: 'An AI-powered recruitment tool where HR teams upload job descriptions and resumes and let an agentic AI shortlist the best candidates. Features bulk and PDF/DOCX uploads, resubmitting updated resumes, role-based access, FSR interview-question generation and full CRUD for projects and JDs.',
 		role: 'Senior Software Engineer',
@@ -112,6 +130,7 @@ export const projects: Project[] = [
 	},
 	{
 		slug: 'xataka',
+		domain: 'Content & Publishing',
 		title: 'Webedia España — Xataka',
 		summary: 'A high-traffic technology blogging platform and sister sites (Trendencias, Directo al Paladar) sharing one codebase. Migrated legacy Backbone modules to React, and improved performance and SEO with Varnish caching and Google Ads / header-bidding monetisation.',
 		role: 'Full Stack Developer',
@@ -122,6 +141,7 @@ export const projects: Project[] = [
 	},
 	{
 		slug: 'vimenpaq',
+		domain: 'Logistics & Shipping',
 		title: 'Vimenpaq',
 		summary: 'A multilingual (i18n) parcel and shipment management platform for branch managers, delivered as a PWA. Features role-based access control with JWT, encrypted login, GraphQL APIs with RTK Query caching, a shared design system and Playwright end-to-end tests, shipped to Kubernetes on AWS through GitLab runners and CodePipeline.',
 		role: 'Full Stack Developer',
@@ -131,6 +151,7 @@ export const projects: Project[] = [
 	},
 	{
 		slug: 'ai-todo',
+		domain: 'AI & Productivity',
 		title: 'AI Todo Management Assistant',
 		summary: 'A natural-language task assistant built on OpenAI function calling that creates, updates, prioritises, completes and retrieves tasks, with structured outputs, date normalisation and multi-step conversation state.',
 		role: 'Full Stack Developer',
@@ -140,6 +161,7 @@ export const projects: Project[] = [
 	},
 	{
 		slug: 'cdt',
+		domain: 'Enterprise Software',
 		title: 'Customer Discovery Tool',
 		summary: 'An enterprise admin application for VMware with caching, efficient rendering for large datasets, reusable components and a unit-tested codebase, deployed on Docker/Kubernetes.',
 		role: 'Senior Software Engineer',
@@ -149,6 +171,7 @@ export const projects: Project[] = [
 	},
 	{
 		slug: 'movemate',
+		domain: 'Business & Brand Websites',
 		title: 'Move Mate Relocations NZ',
 		summary: 'A business website for a New Zealand moving company offering house, office, warehouse and intercity relocation, with service pages, a blog and a quote-request flow.',
 		role: 'Full Stack Developer',
@@ -159,6 +182,7 @@ export const projects: Project[] = [
 	},
 	{
 		slug: 'png',
+		domain: 'Business & Brand Websites',
 		title: 'PNG Software Technologies',
 		summary: 'A business portfolio website for PNG Software, a full-service technology partner offering web development, AI solutions, SEO and digital marketing. Designed, built and launched end to end as the sole developer.',
 		role: 'Full Stack Developer (sole developer)',
@@ -166,6 +190,17 @@ export const projects: Project[] = [
 		url: 'https://pngsoftware.in',
 		desktop: '/projects/png-desktop.jpg',
 		mobile: '/projects/png-mobile.jpg',
+	},
+	{
+		slug: 'kaushik',
+		domain: 'Business & Brand Websites',
+		title: 'Kaushik Architects & Builders',
+		summary: 'A business website for an architecture and construction firm in Ambala City, presenting its ongoing and completed projects, services from architectural design and MEP drawings to construction management and interiors, client testimonials, a brochure download and an enquiry form.',
+		role: 'Full Stack Developer',
+		tech: ['React', 'Vite', 'Tailwind CSS', 'Web3Forms', 'GitHub Pages'],
+		url: 'https://kaushikarchitectsandbuilders.com',
+		desktop: '/projects/kaushik-desktop.jpg',
+		mobile: '/projects/kaushik-mobile.jpg',
 	},
 ];
 
@@ -217,13 +252,28 @@ export const seo = {
 	],
 };
 
-export const services = [
-	{ title: 'Scalable business websites & web apps', text: 'Fast, scalable, SEO-ready websites and web applications in React, Next.js and Astro, like the sites I built for Move Mate Relocations, PNG Software and Trantor.' },
-	{ title: 'E-commerce / Shopify websites', text: 'Online stores and e-commerce websites, including Shopify, built to be fast, easy to manage and ready to sell, from product pages and checkout to launch.' },
-	{ title: 'AI-powered features', text: 'OpenAI, RAG, vector search and function calling, as in Source Smart with AI and my AI task assistant: practical AI inside real products.' },
-	{ title: 'SEO & performance', text: 'Technical SEO, structured data and content structure that helps a business show up in search. One case study reached page 1 for a very competitive local keyword.' },
-	{ title: 'Digital marketing services', text: 'Social media posts, blogging and search-friendly content that put a business in front of local customers, like the work that took Move Mate Relocations to page 1 for a very competitive keyword.' },
-	{ title: 'Cloud hosting & deployments', text: 'Setting up cloud hosting and deployments on AWS, Docker and Kubernetes with CI/CD, and reviewing setups to cut waste: for one customer, fewer load balancers and standard Kubernetes support cut the bill by about two-thirds.' },
+export type ServiceGroup = 'Build it' | 'Get found' | 'Run it';
+export type Service = {
+	title: string;
+	text: string;
+	group: ServiceGroup;
+	/** The one real result or piece of work that backs this service up (omit when there isn't one). */
+	proof?: { text: string; label: string; href: string };
+};
+
+/** The main offer, shown as the featured card. Its proof chips link to the Work section. */
+export const featuredService = {
+	title: 'Scalable business websites & web apps',
+	text: 'Fast, scalable, SEO-ready websites and web applications in React, Next.js and Astro, built to be easy to find, easy to use and easy to grow.',
+	examples: ['Move Mate Relocations', 'PNG Software', 'Kaushik Architects', 'Trantor'],
+};
+
+export const services: Service[] = [
+	{ group: 'Build it', title: 'E-commerce / Shopify websites', text: 'Online stores and e-commerce websites, including Shopify, built to be fast, easy to manage and ready to sell, from product pages and checkout to launch.' },
+	{ group: 'Build it', title: 'AI-powered features', text: 'OpenAI, RAG, vector search and function calling: practical AI inside real products.', proof: { text: 'An agentic recruitment tool and a task assistant', label: 'See the AI work', href: '#work' } },
+	{ group: 'Get found', title: 'SEO & performance', text: 'Technical SEO, structured data and content structure that helps a business show up in search.', proof: { text: 'Page 1 for a very competitive local keyword', label: 'Read the case study', href: '/blog/hamilton-furniture-movers-seo-case-study/' } },
+	{ group: 'Get found', title: 'Digital marketing services', text: 'Social media posts, blogging and search-friendly content that put a business in front of local customers.', proof: { text: 'What good content needs to earn trust and traffic', label: 'Read the lessons', href: '/blog/google-adsense-rejected-thin-content-eeat-lessons/' } },
+	{ group: 'Run it', title: 'Cloud hosting & deployments', text: 'Cloud hosting and deployments on AWS, Docker and Kubernetes with CI/CD, plus reviews of existing setups to cut waste.', proof: { text: 'A customer bill cut from about $2,400 to $800 a month', label: 'Read how', href: '/blog/reduce-aws-kubernetes-cost-2400-to-800/' } },
 ];
 
 export const waLink = (text = '') => `https://wa.me/${WHATSAPP_NUMBER}${text ? `?text=${encodeURIComponent(text)}` : ''}`;

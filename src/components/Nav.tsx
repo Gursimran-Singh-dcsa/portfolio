@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { Icon } from './Icons';
 
-const links = [['About', '#about'], ['Journey', '#journey'], ['Products', '#products'], ['Work', '#work'], ['Skills', '#skills'], ['Blog', '#blog'], ['Contact', '#contact']];
+const links = [['About', '#about'], ['Journey', '#journey'], ['Products', '#products'], ['Work', '#work'], ['Skills', '#skills'], ['Blog', '/blog/'], ['Contact', '#contact']];
 
 export const Nav = () => {
 	const home = usePathname() === '/';
@@ -16,7 +16,8 @@ export const Nav = () => {
 		window.addEventListener('scroll', f, { passive: true });
 		return () => window.removeEventListener('scroll', f);
 	}, []);
-	const href = (h: string) => (home ? h : `/${h}`);
+	// '/blog/' is a real page; the rest are sections of the home page
+	const href = (h: string) => (h.startsWith('/') ? h : home ? h : `/${h}`);
 	return (
 		<header className={`fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-navy/95 backdrop-blur-xl transition ${scrolled ? 'shadow-lg shadow-navy/30' : ''}`}>
 			<nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">

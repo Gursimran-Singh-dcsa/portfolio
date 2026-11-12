@@ -8,7 +8,7 @@ const quick = [
 	['My work', '/#work'],
 	['Products', '/#products'],
 	['Skills', '/#skills'],
-	['Blog', '/#blog'],
+	['Blog', '/blog/'],
 	['Contact', '/#contact'],
 ];
 

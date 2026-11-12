@@ -8,7 +8,7 @@ Personal portfolio at https://gursimran.in (GitHub Pages, custom domain).
 - PWA: hand-written `public/sw.js` + `public/manifest.webmanifest`, registered by `src/components/RegisterSW.tsx` (production only). Icons in `public/icons/`.
 - Blog: Markdown in `src/content/blog/*.md` (frontmatter: title, date, summary, tags), read at build time by `src/data/blogs.ts`, rendered with `marked` + Tailwind typography at real URLs `/blog/<slug>/` via `generateStaticParams`.
 - SEO: metadata + JSON-LD in `src/app/layout.tsx`, `sitemap.ts`, `robots.ts`.
-- Components are server components unless they need state/effects (`'use client'`: Nav, Reveal, Contact, RegisterSW).
+- Components are server components unless they need state/effects (`'use client'`: Nav, Reveal, Contact, RegisterSW, Projects, BlogRow).
 
 ## Reusable UI components (use these, don't repeat class strings)
 `src/components/ui/`: `Section` (max-width, side gutter, mobile-first `py-16 sm:py-24`; `dark` for navy), `Card` (`tone` light/glass/dark, `padding`, `interactive`), `Chip` (tags, badges, pills), `Button` (link or button; `primary`/`outline`/`ghost`/`whatsapp`/`link`; 44-48px touch height and pointer cursor built in). Shared elsewhere: `SectionHead`/`Reveal` (`Reveal.tsx`), `Icon`/`SocialIcon` (`Icons.tsx`), `Projects` (used for both products and projects), `BlogRow`. Markdown rendering lives in `src/lib/markdown.ts` (lazy images, mobile-friendly tables).
@@ -32,7 +32,7 @@ In project cards use mostly "Full Stack Developer" or "Senior Software Engineer"
 `products` in `src/data/site.ts` are Gursimran's own sites (GadgetSimplify, Pharmacist Notes) shown in the "Products I run" section; `projects` are client/employer work.
 
 ## Adding a project
-1. Add an entry to `projects` in `src/data/site.ts`.
+1. Add an entry to `projects` in `src/data/site.ts` and give it a `domain` (from the `domains` list in the same file; add a new domain there only if none fits). The Work section filters by domain.
 2. If it has a live URL, capture screenshots (desktop 1440x900, mobile 390x844) to `public/projects/<slug>-desktop.jpg` and `<slug>-mobile.jpg`, and set `desktop`/`mobile` paths on the entry. Use the `project-screenshotter` agent.
 
 ## SEO and keywords

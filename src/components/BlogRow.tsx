@@ -1,11 +1,10 @@
 'use client';
 import Link from 'next/link';
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { BlogCard, type PostCard } from './BlogCard';
 import { Icon } from './Icons';
 
-export type PostCard = { slug: string; title: string; date: string; summary: string; cover: string; coverAlt: string; readingMinutes: number };
-
-const fmt = (d: string) => new Date(d).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+export type { PostCard };
 const PAD = 20; // matches the row's px-5 / scroll-pl-5
 
 const arrow =
@@ -15,7 +14,7 @@ const arrow =
  * One horizontally scrolling row of posts. Round arrows overlay the edges and a dot indicator underneath shows
  * where you are (the active dot is a wider pill; dots are clickable). Swipe, trackpad and wheel work too.
  */
-export const BlogRow = ({ posts }: { posts: PostCard[] }) => {
+export const BlogRow = ({ posts, total = posts.length }: { posts: PostCard[]; total?: number }) => {
 	const ref = useRef<HTMLDivElement>(null);
 	const [targets, setTargets] = useState<number[]>([0]);
 	const [active, setActive] = useState(0);
@@ -56,26 +55,20 @@ export const BlogRow = ({ posts }: { posts: PostCard[] }) => {
 
 	return (
 		<div className="relative">
-			<div ref={ref} className="scroll-row relative -mx-5 flex snap-x snap-mandatory scroll-pl-5 gap-6 overflow-x-auto px-5 pb-2" tabIndex={0} aria-label="Blog posts, scroll horizontally">
+			<div ref={ref} className="scroll-row relative -mx-5 flex snap-x snap-mandatory scroll-pl-5 gap-6 overflow-x-auto px-5 pb-2" tabIndex={0} aria-label="Latest blog posts, scroll horizontally">
 				{posts.map((p) => (
-					<Link
-						key={p.slug}
-						href={`/blog/${p.slug}/`}
-						className="group flex w-[82%] shrink-0 snap-start flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl sm:w-[380px]"
-					>
-						<img src={p.cover} alt={p.coverAlt} width={1200} height={630} loading="lazy" decoding="async" className="aspect-[1200/630] w-full object-cover" />
-						<div className="flex flex-1 flex-col p-6">
-							<p className="text-xs font-medium text-primary">
-								{fmt(p.date)} · {p.readingMinutes} min read
-							</p>
-							<h3 className="mt-2 font-display text-lg font-bold leading-snug text-navy">{p.title}</h3>
-							<p className="mt-3 line-clamp-3 flex-1 text-sm leading-relaxed text-slate-600">{p.summary}</p>
-							<span className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-primary">
-								Read post <Icon name="arrow" className="h-4 w-4 transition group-hover:translate-x-1" />
-							</span>
-						</div>
-					</Link>
+					<BlogCard key={p.slug} post={p} className="w-[82%] shrink-0 snap-start sm:w-[380px]" />
 				))}
+				<Link
+					href="/blog/"
+					className="group flex w-[82%] shrink-0 snap-start flex-col items-center justify-center gap-4 rounded-3xl border-2 border-dashed border-primary/40 bg-primary/5 p-8 text-center transition hover:-translate-y-1 hover:border-primary hover:bg-primary/10 sm:w-[380px]"
+				>
+					<span className="grid h-14 w-14 place-items-center rounded-full bg-primary text-white shadow-lg shadow-primary/30">
+						<Icon name="arrow" className="h-6 w-6 transition group-hover:translate-x-1" />
+					</span>
+					<span className="font-display text-xl font-bold text-navy">Show more</span>
+					<span className="text-sm leading-relaxed text-slate-600">{total > posts.length ? `Browse all ${total} posts on the blog` : 'Browse the blog'}</span>
+				</Link>
 			</div>
 
 			{/* Arrows overlay the cards at the edges */}
